@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/care2care/static/js/main.a31ef423.chunk.js",
+    "main.js.map": "/care2care/static/js/main.a31ef423.chunk.js.map",
+    "runtime-main.js": "/care2care/static/js/runtime-main.e9657301.js",
+    "runtime-main.js.map": "/care2care/static/js/runtime-main.e9657301.js.map",
+    "static/js/2.5c379722.chunk.js": "/care2care/static/js/2.5c379722.chunk.js",
+    "static/js/2.5c379722.chunk.js.map": "/care2care/static/js/2.5c379722.chunk.js.map",
+    "index.html": "/care2care/index.html",
+    "static/js/2.5c379722.chunk.js.LICENSE.txt": "/care2care/static/js/2.5c379722.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e9657301.js",
+    "static/js/2.5c379722.chunk.js",
+    "static/js/main.a31ef423.chunk.js"
+  ]
+}
