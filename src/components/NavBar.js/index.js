@@ -34,7 +34,7 @@ const NavBar = () => {
       <img src={smallLogo} alt="" />
       {tabs.map((tab, index) => {
         return (
-          <a href={"/care2care/" + tab.path} key={index}>
+          <a href={"/#/" + tab.path} key={index}>
             {tab.title}
           </a>
         );
