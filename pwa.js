@@ -1,4 +1,4 @@
-if ("serviceWorker" in navigator) {
+if (navigator.serviceWorker) {
   navigator.serviceWorker
     .register('/care2care/serviceWorker.js', {scope: '/care2care/'})
     .then(registration => {
