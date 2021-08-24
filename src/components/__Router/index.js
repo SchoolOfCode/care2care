@@ -1,4 +1,4 @@
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import React, { lazy, Suspense } from "react";
 
 const Home = lazy(() => import("../../__Pages/1_home"));
@@ -10,7 +10,6 @@ const Settings = lazy(() => import("../../__Pages/6_settings"));
 
 const Content = () => {
   return (
-    <Router>
       <Switch>
         <Suspense fallback={<div>Loading</div>}>
           <Route path="/" component={Home} exact />
@@ -22,7 +21,6 @@ const Content = () => {
           <Route path="/settings" component={Settings} exact />
         </Suspense>
       </Switch>
-    </Router>
   );
 };
 
