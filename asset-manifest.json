@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/care2care/static/js/main.fbca45dc.chunk.js",
-    "main.js.map": "/care2care/static/js/main.fbca45dc.chunk.js.map",
+    "main.js": "/care2care/static/js/main.dbdd2da7.chunk.js",
+    "main.js.map": "/care2care/static/js/main.dbdd2da7.chunk.js.map",
     "runtime-main.js": "/care2care/static/js/runtime-main.97a0345c.js",
     "runtime-main.js.map": "/care2care/static/js/runtime-main.97a0345c.js.map",
     "static/js/2.1ce13600.chunk.js": "/care2care/static/js/2.1ce13600.chunk.js",
@@ -25,11 +25,12 @@
     "static/js/11.c855ede6.chunk.js": "/care2care/static/js/11.c855ede6.chunk.js",
     "static/js/11.c855ede6.chunk.js.map": "/care2care/static/js/11.c855ede6.chunk.js.map",
     "index.html": "/care2care/index.html",
-    "static/js/2.1ce13600.chunk.js.LICENSE.txt": "/care2care/static/js/2.1ce13600.chunk.js.LICENSE.txt"
+    "static/js/2.1ce13600.chunk.js.LICENSE.txt": "/care2care/static/js/2.1ce13600.chunk.js.LICENSE.txt",
+    "static/media/smallLogo.401a1b69.svg": "/care2care/static/media/smallLogo.401a1b69.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.97a0345c.js",
     "static/js/2.1ce13600.chunk.js",
-    "static/js/main.fbca45dc.chunk.js"
+    "static/js/main.dbdd2da7.chunk.js"
   ]
 }
