@@ -1,1 +1,0 @@
-{"version":3,"sources":["__Pages/5_checkRecord.js"],"names":["CheckRecord"],"mappings":"yHAMeA,UANK,WAChB,OACI","file":"static/js/8.b4c6ba2c.chunk.js","sourcesContent":["const CheckRecord = () => {\r\n    return ( \r\n        <h1>CHECK RECORD</h1>\r\n     );\r\n}\r\n \r\nexport default CheckRecord;"],"sourceRoot":""}
