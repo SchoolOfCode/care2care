@@ -1,12 +1,22 @@
 import React from "react";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./theme/globalStyle";
 import logo from "./images/logo.svg";
+import themes from "./theme/theme";
+import useLocalStorage from "./__Hooks/useLocalStorage";
 
-function App() {
+const App = () => {
+  const [theme, setTheme] = useLocalStorage("theme", "dark");
+  const changeTheme = () => {
+    theme === "dark" ? setTheme("light") : setTheme("dark");
+  };
+
   return (
-    <div className="App">
+    <ThemeProvider theme={themes[theme]}>
+      <GlobalStyle changeTheme={changeTheme} /> 
       <img src={logo} className="App-logo" alt="logo" />
-    </div>
+     </ThemeProvider>
   );
-}
+};
 
 export default App;
