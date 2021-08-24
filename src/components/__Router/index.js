@@ -13,13 +13,13 @@ const Content = () => {
     <Router>
       <Switch>
         <Suspense fallback={<div>Loading</div>}>
-          <Route path="/" component={Home} exact />
-          <Route path="/profile" component={Profile} exact />
+          <Route path="/care2care/" component={Home} exact />
+          <Route path="/care2care/profile" component={Profile} exact />
           {/* idea: add a slug for each patient */}
-          <Route path="/patient" component={PatientProfile} exact />
-          <Route path="/add" component={AddRecord} exact />
-          <Route path="/check" component={CheckRecord} exact />
-          <Route path="/settings" component={Settings} exact />
+          <Route path="/care2care/patient" component={PatientProfile} exact />
+          <Route path="/care2care/add" component={AddRecord} exact />
+          <Route path="/care2care/check" component={CheckRecord} exact />
+          <Route path="/care2care/settings" component={Settings} exact />
         </Suspense>
       </Switch>
     </Router>

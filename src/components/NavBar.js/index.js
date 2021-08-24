@@ -1,38 +1,40 @@
 import styled from "styled-components";
+import smallLogo from "../../images/smallLogo.svg";
 
 const NavBar = () => {
   const tabs = [
     {
       title: "Home",
-      path: "/",
+      path: "",
     },
     {
       title: "Profile",
-      path: "/profile",
+      path: "profile",
     },
     {
       title: "Patient",
-      path: "/patient",
+      path: "patient",
     },
     {
       title: "Add New Record",
-      path: "/add",
+      path: "add",
     },
     {
       title: "Check Records",
-      path: "/check",
+      path: "check",
     },
     {
       title: "Settings",
-      path: "/settings",
+      path: "settings",
     },
   ];
 
   return (
     <StyledNavBar>
+      <img src={smallLogo} alt="" />
       {tabs.map((tab, index) => {
         return (
-          <a href={tab.path} key={index}>
+          <a href={"/care2care/" + tab.path} key={index}>
             {tab.title}
           </a>
         );
@@ -43,8 +45,8 @@ const NavBar = () => {
 
 export default NavBar;
 
-const StyledNavBar = styled.nav `
-display: flex;
-flex-flow: row nowrap;
-justify-content: space-between;
-`
+const StyledNavBar = styled.nav`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+`;
