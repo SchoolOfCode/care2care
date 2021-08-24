@@ -1,9 +1,11 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./theme/globalStyle";
-import logo from "./images/logo.svg";
+// import logo from "./images/logo.svg";
 import themes from "./theme/theme";
-import useLocalStorage from "./__Hooks/useLocalStorage";
+import useLocalStorage from "./components/__Hooks/useLocalStorage";
+import NavBar from "./components/NavBar.js";
+import Main from "./components/Main.js";
 
 const App = () => {
   const [theme, setTheme] = useLocalStorage("theme", "dark");
@@ -13,9 +15,10 @@ const App = () => {
 
   return (
     <ThemeProvider theme={themes[theme]}>
-      <GlobalStyle changeTheme={changeTheme} /> 
-      <img src={logo} className="App-logo" alt="logo" />
-     </ThemeProvider>
+      <GlobalStyle changeTheme={changeTheme} />
+      <NavBar />
+      <Main />
+    </ThemeProvider>
   );
 };
 
