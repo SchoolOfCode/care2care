@@ -1,0 +1,1 @@
+{"version":3,"sources":["__Pages/6_settings.js"],"names":["Settings"],"mappings":"yHAMeA,UANE,WACb,OACI","file":"static/js/8.d038c8de.chunk.js","sourcesContent":["const Settings = () => {\r\n    return ( \r\n        <h1>SETTINGS</h1>\r\n     );\r\n}\r\n \r\nexport default Settings;"],"sourceRoot":""}

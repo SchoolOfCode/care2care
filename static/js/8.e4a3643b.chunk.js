@@ -1,2 +1,0 @@
-(this.webpackJsonpcare2care=this.webpackJsonpcare2care||[]).push([[8],{41:function(c,e,r){"use strict";r.r(e);var t=r(2);e.default=function(){return Object(t.jsx)("h1",{children:"SETTINGS"})}}}]);
-//# sourceMappingURL=8.e4a3643b.chunk.js.map
