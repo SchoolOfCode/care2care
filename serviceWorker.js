@@ -1,3 +1,4 @@
+/* eslint-disable-next-line no-restricted-globals */
 self.addEventListener("install", (e) => {
   e.waitUntil(
     caches.open("static").then((cache) => {
@@ -7,7 +8,7 @@ self.addEventListener("install", (e) => {
     })
   );
 });
-
+/* eslint-disable-next-line no-restricted-globals */
 self.addEventListener("fetch", (e) => {
   e.respondWith(
     caches.match(e.request).then((response) => {
