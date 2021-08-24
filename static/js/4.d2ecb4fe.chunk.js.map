@@ -1,0 +1,1 @@
+{"version":3,"sources":["__Pages/1_home.js"],"names":["Home"],"mappings":"yHAMeA,UANF,WACT,OACI","file":"static/js/4.d2ecb4fe.chunk.js","sourcesContent":["const Home = () => {\r\n    return ( \r\n        <h1>HOME</h1>\r\n     );\r\n}\r\n \r\nexport default Home;"],"sourceRoot":""}

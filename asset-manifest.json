@@ -1,20 +1,35 @@
 {
   "files": {
-    "main.js": "/care2care/static/js/main.bdefcbfb.chunk.js",
-    "main.js.map": "/care2care/static/js/main.bdefcbfb.chunk.js.map",
-    "runtime-main.js": "/care2care/static/js/runtime-main.8dcb73b6.js",
-    "runtime-main.js.map": "/care2care/static/js/runtime-main.8dcb73b6.js.map",
-    "static/js/2.084fd90e.chunk.js": "/care2care/static/js/2.084fd90e.chunk.js",
-    "static/js/2.084fd90e.chunk.js.map": "/care2care/static/js/2.084fd90e.chunk.js.map",
-    "static/js/3.82dc2021.chunk.js": "/care2care/static/js/3.82dc2021.chunk.js",
-    "static/js/3.82dc2021.chunk.js.map": "/care2care/static/js/3.82dc2021.chunk.js.map",
+    "main.js": "/care2care/static/js/main.fbca45dc.chunk.js",
+    "main.js.map": "/care2care/static/js/main.fbca45dc.chunk.js.map",
+    "runtime-main.js": "/care2care/static/js/runtime-main.97a0345c.js",
+    "runtime-main.js.map": "/care2care/static/js/runtime-main.97a0345c.js.map",
+    "static/js/2.1ce13600.chunk.js": "/care2care/static/js/2.1ce13600.chunk.js",
+    "static/js/2.1ce13600.chunk.js.map": "/care2care/static/js/2.1ce13600.chunk.js.map",
+    "static/js/3.e31728bd.chunk.js": "/care2care/static/js/3.e31728bd.chunk.js",
+    "static/js/3.e31728bd.chunk.js.map": "/care2care/static/js/3.e31728bd.chunk.js.map",
+    "static/js/4.d2ecb4fe.chunk.js": "/care2care/static/js/4.d2ecb4fe.chunk.js",
+    "static/js/4.d2ecb4fe.chunk.js.map": "/care2care/static/js/4.d2ecb4fe.chunk.js.map",
+    "static/js/5.9358820f.chunk.js": "/care2care/static/js/5.9358820f.chunk.js",
+    "static/js/5.9358820f.chunk.js.map": "/care2care/static/js/5.9358820f.chunk.js.map",
+    "static/js/6.1c3973ad.chunk.js": "/care2care/static/js/6.1c3973ad.chunk.js",
+    "static/js/6.1c3973ad.chunk.js.map": "/care2care/static/js/6.1c3973ad.chunk.js.map",
+    "static/js/7.c7c784ed.chunk.js": "/care2care/static/js/7.c7c784ed.chunk.js",
+    "static/js/7.c7c784ed.chunk.js.map": "/care2care/static/js/7.c7c784ed.chunk.js.map",
+    "static/js/8.b4c6ba2c.chunk.js": "/care2care/static/js/8.b4c6ba2c.chunk.js",
+    "static/js/8.b4c6ba2c.chunk.js.map": "/care2care/static/js/8.b4c6ba2c.chunk.js.map",
+    "static/js/9.b3b7b73d.chunk.js": "/care2care/static/js/9.b3b7b73d.chunk.js",
+    "static/js/9.b3b7b73d.chunk.js.map": "/care2care/static/js/9.b3b7b73d.chunk.js.map",
+    "static/js/10.c63e34bc.chunk.js": "/care2care/static/js/10.c63e34bc.chunk.js",
+    "static/js/10.c63e34bc.chunk.js.map": "/care2care/static/js/10.c63e34bc.chunk.js.map",
+    "static/js/11.c855ede6.chunk.js": "/care2care/static/js/11.c855ede6.chunk.js",
+    "static/js/11.c855ede6.chunk.js.map": "/care2care/static/js/11.c855ede6.chunk.js.map",
     "index.html": "/care2care/index.html",
-    "static/js/2.084fd90e.chunk.js.LICENSE.txt": "/care2care/static/js/2.084fd90e.chunk.js.LICENSE.txt",
-    "static/media/logo.7ec037ab.svg": "/care2care/static/media/logo.7ec037ab.svg"
+    "static/js/2.1ce13600.chunk.js.LICENSE.txt": "/care2care/static/js/2.1ce13600.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8dcb73b6.js",
-    "static/js/2.084fd90e.chunk.js",
-    "static/js/main.bdefcbfb.chunk.js"
+    "static/js/runtime-main.97a0345c.js",
+    "static/js/2.1ce13600.chunk.js",
+    "static/js/main.fbca45dc.chunk.js"
   ]
 }
