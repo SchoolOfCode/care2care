@@ -1,0 +1,2 @@
+(this.webpackJsonpcare2care=this.webpackJsonpcare2care||[]).push([[5],{48:function(c,e,r){"use strict";r.r(e);var t=r(1);e.default=function(){return Object(t.jsx)("h1",{children:"ADD RECORD"})}}}]);
+//# sourceMappingURL=5.f7568578.chunk.js.map
