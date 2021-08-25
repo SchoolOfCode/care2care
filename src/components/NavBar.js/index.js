@@ -5,10 +5,6 @@ import smallLogo from "../../images/smallLogo.svg";
 const NavBar = () => {
   const tabs = [
     {
-      title: "Home",
-      path: "/",
-    },
-    {
       title: "Profile",
       path: "/profile",
     },
