@@ -17,6 +17,11 @@ const Main = () => {
 export default Main;
 
 const StyledMain = styled.main`
-  display: flex;
-  justify-content: center;
+  height: 90vh;
+  width: 100vw;
+  
+  h1 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
 `;

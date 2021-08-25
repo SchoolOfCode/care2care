@@ -5,7 +5,8 @@ import { GlobalStyle } from "./theme/globalStyle";
 import themes from "./theme/theme";
 import useLocalStorage from "./components/__Hooks/useLocalStorage";
 import { useAuth0 } from "@auth0/auth0-react";
-import {Authenticated, NotAuthenticated} from "./__Pages/0_login.js"
+import { Authenticated, NotAuthenticated } from "./__Pages/0_login.js";
+// import Settings from "./__Pages/5_settings";
 
 const CheckAuthenticated = () => {
   const { isAuthenticated } = useAuth0();
@@ -13,9 +14,9 @@ const CheckAuthenticated = () => {
   return isAuthenticated ? <Authenticated /> : <NotAuthenticated />;
 };
 
-const App = () => {
+const App = (changeTheme) => {
   const [theme, setTheme] = useLocalStorage("theme", "light");
-  const changeTheme = () => {
+  changeTheme = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
   const { isLoading } = useAuth0();
@@ -23,7 +24,8 @@ const App = () => {
 
   return (
     <ThemeProvider theme={themes[theme]}>
-      <GlobalStyle changeTheme={changeTheme} />
+      <GlobalStyle />
+      {/* <Settings changeTheme={changeTheme} /> */}
       <CheckAuthenticated />
     </ThemeProvider>
   );
