@@ -1,9 +1,9 @@
 import { Switch, Route } from "react-router-dom";
 import React, { lazy, Suspense } from "react";
 
-const Profile = lazy(() => import("../../__Pages/1_profile"));
-const PatientProfile = lazy(() => import("../../__Pages/2_patientProfile"));
-const AddRecord = lazy(() => import("../../__Pages/3_addRecord"));
+const Profile = lazy(() => import("../../__Pages/3_profile"));
+const PatientProfile = lazy(() => import("../../__Pages/1_patientProfile"));
+const AddRecord = lazy(() => import("../../__Pages/2_addRecord"));
 const CheckRecord = lazy(() => import("../../__Pages/4_checkRecord"));
 const Settings = lazy(() => import("../../__Pages/5_settings"));
 

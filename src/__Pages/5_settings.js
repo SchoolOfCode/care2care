@@ -25,6 +25,7 @@ const Settings = (props) => {
       <div class="button">
         <LogoutButton />
       </div>
+      <p class="team">UNITED NATIONS - 2021</p>
     </StyledSettings>
   );
 };
@@ -33,7 +34,7 @@ export default Settings;
 
 const StyledSettings = styled.div`
   .settings-options {
-    margin: 0 20px 20px 20px;
+    margin: 0 40px 20px 20px;
   }
 
   .theme-toggle {
@@ -48,5 +49,15 @@ const StyledSettings = styled.div`
     left: 50%;
     margin-left: -50px;
     bottom: 100px;
+  }
+
+  .team {
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    margin-right: 10px;
+    font-weight: 600;
+    font-size: 12px;
+    color: #e1e1e1;
   }
 `;
