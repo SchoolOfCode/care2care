@@ -59,6 +59,7 @@ const StyledNavBar = styled.nav`
   justify-content: space-between;
   align-items: center;
   background: ${(props) => props.theme.accent1};
+  margin-bottom: 50px;
 
   .icons {
     width: 80%;

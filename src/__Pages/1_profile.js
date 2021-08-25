@@ -23,8 +23,6 @@ const Profile = () => {
 export default Profile;
 
 const StyledProfile = styled.div`
-  display: flex;
-  justify-content: center;
   margin-bottom: 30px;
 
   img {
