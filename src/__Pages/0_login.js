@@ -34,7 +34,7 @@ const StyledLogin = styled.div`
 `;
 
 const StyledSVG = styled(SVG)`
-  max-width: 90vw;
+  max-width: 80vw;
   width: 350px;
 
   & path {

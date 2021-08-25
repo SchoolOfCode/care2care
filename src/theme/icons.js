@@ -1,4 +1,4 @@
-import { IoLogIn, IoLogOut, IoSettings } from "react-icons/io";
+import { IoLogIn, IoLogOut, IoSettings } from "react-icons/io5";
 import { RiUserHeartFill } from "react-icons/ri";
 import { FaUserAlt } from "react-icons/fa";
 import { BiMessageAltAdd, BiMessageAltCheck } from "react-icons/bi";

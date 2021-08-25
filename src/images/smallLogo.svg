@@ -1,8 +1,9 @@
 <svg
   id="small-svg-heart"
   xmlns="http://www.w3.org/2000/svg"
-  width="100"
-  height="55"
+  width='80'
+  height="40"
+  viewBox="5 0 140 50"
 >
   <g
     id="small-logo-heart"
