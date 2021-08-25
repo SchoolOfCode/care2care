@@ -1,17 +1,22 @@
 import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
-import { HashRouter } from "react-router-dom";
-import App from "./App.jsx";
 import reportWebVitals from "./reportWebVitals";
+import { HashRouter } from "react-router-dom";
+import { Auth0Provider } from "@auth0/auth0-react";
+import App from "./App.jsx";
 
 const root = document.getElementById("root");
 
 ReactDOM.render(
-  <StrictMode>
+  <Auth0Provider
+    domain='archianne.eu.auth0.com'
+    clientId='9ciI61OkjK0UPi8c8TG0EGUjX6tQHPjq'
+    redirectUri={window.location.origin}
+  >
     <HashRouter>
       <App />
     </HashRouter>
-  </StrictMode>,
+  </Auth0Provider>,
   root
 );
 

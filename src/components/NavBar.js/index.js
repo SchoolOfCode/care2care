@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import smallLogo from "../../images/smallLogo.svg";
+import smallLogo from "../../images/logo.svg";
 
 const NavBar = () => {
   const tabs = [

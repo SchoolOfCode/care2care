@@ -4,6 +4,7 @@ const LightTheme = {
 
 const DarkTheme = {
   bg: "#0D1117",
+  accent1: "#1C7293"
 };
 
 const themes = {
