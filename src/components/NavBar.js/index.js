@@ -1,13 +1,9 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import smallLogo from "../../images/logo.svg";
+import smallLogo from "../../images/smallLogo.svg";
 
 const NavBar = () => {
   const tabs = [
-    {
-      title: "Home",
-      path: "/",
-    },
     {
       title: "Profile",
       path: "/profile",
