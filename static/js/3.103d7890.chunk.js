@@ -1,0 +1,2 @@
+(this.webpackJsonpcare2care=this.webpackJsonpcare2care||[]).push([[3],{54:function(c,e,r){"use strict";r.r(e);var t=r(2);e.default=function(){return Object(t.jsx)("h1",{children:"PATIENT PROFILE"})}}}]);
+//# sourceMappingURL=3.103d7890.chunk.js.map
