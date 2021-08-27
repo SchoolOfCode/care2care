@@ -15,7 +15,11 @@ const Form = () => {
     },
   ];
 
-  return <form></form>;
+  return (
+    <form>
+        
+    </form>
+  );
 };
 
 export default Form;
