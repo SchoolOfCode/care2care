@@ -18,8 +18,8 @@
       "type": "image/png"
     }
   ],
-  "start_url": "https://schoolofcode.github.io/care2care/#/",
-  "scope": "https://schoolofcode.github.io/care2care/#/",
+  "start_url": "https://care2care.me/",
+  "scope": "https://care2care.me/",
   "display": "standalone",
   "theme_color": "#51ADE2",
   "background_color": "#ffffff"
