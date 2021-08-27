@@ -70,7 +70,7 @@ const Form = () => {
           value={job}
         >
           <option value="" disabled defaultValue>
-            Select your option
+            Select
           </option>
           <option value="Care Assistant">Care Assistant</option>
           <option value="Senior Care Assistant">Senior Care Assistant</option>
@@ -85,7 +85,7 @@ const Form = () => {
           value={records}
         >
           <option value="" disabled defaultValue>
-            Select your option
+            Select
           </option>
           <option value="Wellbeing">Wellbeing</option>
           <option value="Personal Hygiene">Personal Hygiene</option>
