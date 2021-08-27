@@ -14,9 +14,9 @@ const CheckAuthenticated = () => {
   return isAuthenticated ? <Authenticated /> : <NotAuthenticated />;
 };
 
-const App = (changeTheme) => {
+const App = () => {
   const [theme, setTheme] = useLocalStorage("theme", "light");
-  changeTheme = () => {
+  const changeTheme = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
   const { isLoading } = useAuth0();
@@ -25,7 +25,7 @@ const App = (changeTheme) => {
   return (
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyle />
-      {/* <Settings changeTheme={changeTheme} /> */}
+      {/* <Settings changeTheme={changeTheme}/> */}
       <CheckAuthenticated />
     </ThemeProvider>
   );

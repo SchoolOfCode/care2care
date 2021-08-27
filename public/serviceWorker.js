@@ -3,7 +3,7 @@ self.addEventListener("install", (e) => {
   e.waitUntil(
     caches.open("static").then((cache) => {
       return cache.addAll([
-        "/care2care/logo192.png",
+        "/logo192.png",
       ]);
     })
   );
