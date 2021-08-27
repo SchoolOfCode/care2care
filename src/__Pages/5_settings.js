@@ -2,10 +2,12 @@ import styled from "styled-components";
 import LogoutButton from "../components/LogoutButton";
 import Toggle from "../components/StyledToggle";
 import useLocalStorage from "../components/__Hooks/useLocalStorage";
+import { useContext } from "react";
+import { UserContext } from "../App.jsx";
 
 const Settings = (props) => {
   const [isOn, setIsOn] = useLocalStorage("isOn", false);
-
+  const changeTheme = useContext(UserContext);
   return (
     <StyledSettings>
       <h1>SETTINGS</h1>
@@ -14,7 +16,7 @@ const Settings = (props) => {
         <Toggle
           isOn={isOn}
           handleToggle={() => {
-            props.changeTheme();
+            changeTheme();
             setIsOn(!isOn);
           }}
         />
