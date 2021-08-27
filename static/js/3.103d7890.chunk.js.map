@@ -1,1 +1,0 @@
-{"version":3,"sources":["__Pages/1_patientProfile.js"],"names":["PatientProfile"],"mappings":"yHAMeA,UANQ,WACnB,OACI","file":"static/js/3.103d7890.chunk.js","sourcesContent":["const PatientProfile = () => {\r\n    return ( \r\n        <h1>PATIENT PROFILE</h1>\r\n     );\r\n}\r\n \r\nexport default PatientProfile;"],"sourceRoot":""}
