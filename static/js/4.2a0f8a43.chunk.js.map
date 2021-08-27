@@ -1,1 +1,0 @@
-{"version":3,"sources":["__Pages/2_addRecord.js"],"names":["AddRecord"],"mappings":"yHAMeA,UANG,WACd,OACI","file":"static/js/4.2a0f8a43.chunk.js","sourcesContent":["const AddRecord = () => {\r\n    return ( \r\n        <h1>ADD RECORD</h1>\r\n     );\r\n}\r\n \r\nexport default AddRecord;"],"sourceRoot":""}
