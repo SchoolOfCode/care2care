@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 import App from "./App.jsx";
 
@@ -13,9 +13,9 @@ ReactDOM.render(
     clientId='9ciI61OkjK0UPi8c8TG0EGUjX6tQHPjq'
     redirectUri={window.location.origin}
   >
-    <HashRouter>
+    <BrowserRouter>
       <App />
-    </HashRouter>
+    </BrowserRouter>
   </Auth0Provider>,
   root
 );
