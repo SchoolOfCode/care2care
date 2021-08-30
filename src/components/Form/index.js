@@ -1,6 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
-import { useEffect } from "react/cjs/react.production.min";
 import styled from "styled-components";
 
 const Form = () => {
