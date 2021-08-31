@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./theme/globalStyle";
 // import logo from "./images/logo.svg";
@@ -7,8 +7,6 @@ import useLocalStorage from "./components/__Hooks/useLocalStorage";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Authenticated, NotAuthenticated } from "./__Pages/0_login.js";
 // import Settings from "./__Pages/5_settings";
-
-export const UserContext = createContext();
 
 const CheckAuthenticated = () => {
   const { isAuthenticated } = useAuth0();
@@ -27,9 +25,8 @@ const App = () => {
   return (
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyle />
-      <UserContext.Provider value={changeTheme}>
-        <CheckAuthenticated />
-      </UserContext.Provider>
+      {/* <Settings changeTheme={changeTheme}/> */}
+      <CheckAuthenticated />
     </ThemeProvider>
   );
 };

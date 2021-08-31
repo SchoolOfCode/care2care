@@ -1,12 +1,7 @@
-import Form from "../components/Form";
-
 const AddRecord = () => {
-  return (
-    <>
-      <h1>ADD RECORD</h1>
-      <Form />
-    </>
-  );
-};
-
+    return ( 
+        <h1>ADD RECORD</h1>
+     );
+}
+ 
 export default AddRecord;
