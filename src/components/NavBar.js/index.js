@@ -35,10 +35,10 @@ const NavBar = () => {
 
   return (
     <StyledNavBar>
-      <div class="logo">
+      <div className="logo">
         <StyledSVG src={smallLogo} alt="" />
       </div>
-      <div class="icons">
+      <div className="icons">
         {tabs.map((tab, index) => {
           return (
             <Link to={tab.path} key={index}>
