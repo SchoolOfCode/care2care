@@ -12,7 +12,6 @@ export const UserContext = createContext();
 
 const CheckAuthenticated = () => {
   const { isAuthenticated } = useAuth0();
-
   return isAuthenticated ? <Authenticated /> : <NotAuthenticated />;
 };
 

@@ -1,15 +1,17 @@
 // import JSONPretty from "react-json-pretty";
-import React, { useEffect, useState } from "react";
-import Papa from "papaparse";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import usePaparse from "../__Hooks/usePaparse";
+import { UserContext } from "../Main.js";
 
 const URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQk2shcRCfjZcMqWRoT8BXaIymooGq2pcd_heGDVrzQYnT0RL6hxHAq8M6FF9kZm5mILBmjg1qPQJc6/pub?output=csv";
 
 const PatientSheets = () => {
-  const [patient, setPatient] = useState("");
+  // const [patient, setPatient] = useState("");
   const [data] = usePaparse(URL);
+  const patient = useContext(UserContext);
+  const setPatient = useContext(UserContext);
 
   const filteredPatient = data.filter((item) =>
     item.Timestamp.includes(patient)
@@ -41,7 +43,6 @@ const PatientSheets = () => {
         </ul>
       );
     });
-  console.log(mapFiltered);
 
   const PatientDetails = () => {
     return (
