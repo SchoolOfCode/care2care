@@ -6,14 +6,14 @@ const Content = lazy(() => import("../__Router"));
 
 export const UserContext = createContext();
 
-const Main = () => {
-  const [patient, setPatient] = useState();
+const Main = ({ children }) => {
+  const [patient, setPatient] = useState("");
 
   return (
     <StyledMain>
       <UserContext.Provider value={{ patient, setPatient }}>
         <Suspense fallback={<div>Loading</div>}>
-          <Content />
+          <Content>{children}</Content>
         </Suspense>
       </UserContext.Provider>
     </StyledMain>
