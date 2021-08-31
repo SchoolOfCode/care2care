@@ -3,8 +3,20 @@ import styled from "styled-components";
 import Icons from "../../theme/icons";
 import smallLogo from "../../images/smallLogo.svg";
 import SVG from "react-inlinesvg";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
-const NavBar = () => {
+const NavBarButtons = () => {
+  const history = useHistory();
+  const [link, setLink] = useState(window.location.pathname);
+
+  useEffect(() => {
+    return history.listen((location) => {
+      setLink(location.pathname)
+      console.log(`You changed the page to: ${link}`);
+    });
+  }, [history, link]);
+
   const tabs = [
     {
       icon: <Icons.Patients />,
@@ -34,31 +46,36 @@ const NavBar = () => {
   ];
 
   return (
-    <StyledNavBar>
-      <div class="logo">
+    <StyledNavBarButtons>
+      <div className="logo">
         <StyledSVG src={smallLogo} alt="" />
       </div>
-      <div class="icons">
+      <div className="icons">
         {tabs.map((tab, index) => {
           return (
-            <Link to={tab.path} key={index}>
-              {tab.icon}
-            </Link>
+            <div
+              className={`tabs ${
+                link === tab.path ? "active" : ""
+              }`}
+            >
+              <Link to={tab.path} key={index}>
+                {tab.icon}
+              </Link>
+            </div>
           );
         })}
       </div>
-    </StyledNavBar>
+    </StyledNavBarButtons>
   );
 };
 
-export default NavBar;
+export default NavBarButtons;
 
-const StyledNavBar = styled.nav`
+const StyledNavBarButtons = styled.nav`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  background: ${(props) => props.theme.accent1};
   margin-bottom: 50px;
 
   .icons {
@@ -73,7 +90,7 @@ const StyledNavBar = styled.nav`
   }
 
   a {
-    color: ${(props) => props.theme.color1};
+    color: ${(props) => props.theme.notActive};
     font-size: 24px;
   }
 
@@ -82,12 +99,21 @@ const StyledNavBar = styled.nav`
       display: none;
     }
   }
+
+  .active {
+    border-bottom: 2px solid ${(props) => props.theme.accent1} !important;
+
+    a {
+      color: ${(props) => props.theme.accent1} !important;
+      font-weight: 630 !important;
+    }
+  }
 `;
 
 const StyledSVG = styled(SVG)`
   max-width: 77px;
 
   & path {
-    fill: ${(props) => props.theme.color1};
+    fill: ${(props) => props.theme.fontColor2};
   }
 `;

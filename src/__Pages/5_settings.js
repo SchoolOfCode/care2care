@@ -1,31 +1,33 @@
 import styled from "styled-components";
-import LogoutButton from "../components/LogoutButton";
 import Toggle from "../components/StyledToggle";
 import useLocalStorage from "../components/__Hooks/useLocalStorage";
+import { useContext } from "react";
+import { UserContext } from "../App.jsx";
+import LogoutButton from "../components/Form/LogoutButton";
 
 const Settings = (props) => {
   const [isOn, setIsOn] = useLocalStorage("isOn", false);
-
+  const changeTheme = useContext(UserContext);
   return (
     <StyledSettings>
       <h1>SETTINGS</h1>
-      <div class="settings-options theme-toggle">
+      <div className="settings-options theme-toggle">
         <h3>Theme</h3>
         <Toggle
           isOn={isOn}
           handleToggle={() => {
-            props.changeTheme();
+            changeTheme();
             setIsOn(!isOn);
           }}
         />
       </div>
-      <div class="settings-options theme-toggle">
+      <div className="settings-options theme-toggle">
         <h3>Help</h3>
       </div>
       <div class="button">
         <LogoutButton />
       </div>
-      <p class="team">UNITED NATIONS - 2021</p>
+      <p className="team">UNITED NATIONS - 2021</p>
     </StyledSettings>
   );
 };
