@@ -1,3 +1,8 @@
+//TO-DO ====================================================================================================================
+//learn how to use universal login from auth0
+//change the login page from auth0 to a custom one with universal login
+//lock which users can log in - has to be done in auth0 website
+
 import LoginButton from "../components/Form/LoginButton.js";
 import NavBar from "../components/NavBar/index.js";
 import Main from "../components/Main.js";
