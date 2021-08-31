@@ -1,5 +1,5 @@
-import LoginButton from "../components/LoginButton";
-import NavBar from "../components/NavBar.js";
+import LoginButton from "../components/Form/LoginButton.js";
+import NavBar from "../components/NavBar/index.js";
 import Main from "../components/Main.js";
 import styled from "styled-components";
 import logo from "../images/logo.svg";

@@ -4,7 +4,7 @@ import Icons from "../../theme/icons";
 import smallLogo from "../../images/smallLogo.svg";
 import SVG from "react-inlinesvg";
 
-const NavBar = () => {
+const NavBarButtons = () => {
   const tabs = [
     {
       icon: <Icons.Patients />,
@@ -34,7 +34,7 @@ const NavBar = () => {
   ];
 
   return (
-    <StyledNavBar>
+    <StyledNavBarButtons>
       <div className="logo">
         <StyledSVG src={smallLogo} alt="" />
       </div>
@@ -47,18 +47,17 @@ const NavBar = () => {
           );
         })}
       </div>
-    </StyledNavBar>
+    </StyledNavBarButtons>
   );
 };
 
-export default NavBar;
+export default NavBarButtons;
 
-const StyledNavBar = styled.nav`
+const StyledNavBarButtons = styled.nav`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  background: ${(props) => props.theme.accent1};
   margin-bottom: 50px;
 
   .icons {
@@ -73,7 +72,7 @@ const StyledNavBar = styled.nav`
   }
 
   a {
-    color: ${(props) => props.theme.color1};
+    color: ${(props) => props.theme.fontColor1};
     font-size: 24px;
   }
 
@@ -88,6 +87,6 @@ const StyledSVG = styled(SVG)`
   max-width: 77px;
 
   & path {
-    fill: ${(props) => props.theme.color1};
+    fill: ${(props) => props.theme.fontColor1};
   }
 `;

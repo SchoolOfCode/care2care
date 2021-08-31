@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import LogoutButton from "../components/LogoutButton";
 import Toggle from "../components/StyledToggle";
 import useLocalStorage from "../components/__Hooks/useLocalStorage";
 import { useContext } from "react";
 import { UserContext } from "../App.jsx";
+import LogoutButton from "../components/Form/LogoutButton";
 
 const Settings = (props) => {
   const [isOn, setIsOn] = useLocalStorage("isOn", false);
