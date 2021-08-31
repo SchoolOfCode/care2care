@@ -49,7 +49,7 @@ const StyledSettings = styled.div`
   .button {
     position: absolute;
     left: 50%;
-    margin-left: -50px;
+    margin-left: -75px;
     bottom: 100px;
   }
 

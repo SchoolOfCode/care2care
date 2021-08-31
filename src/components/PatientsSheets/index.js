@@ -1,31 +1,15 @@
+// import JSONPretty from "react-json-pretty";
 import React, { useEffect, useState } from "react";
 import Papa from "papaparse";
 import styled from "styled-components";
-// import JSONPretty from "react-json-pretty";
+import usePaparse from "../__Hooks/usePaparse";
 
 const URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQk2shcRCfjZcMqWRoT8BXaIymooGq2pcd_heGDVrzQYnT0RL6hxHAq8M6FF9kZm5mILBmjg1qPQJc6/pub?output=csv";
+
 const PatientSheets = () => {
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
   const [patient, setPatient] = useState("");
-
-  useEffect(() => {
-    setLoading(true);
-
-    Papa.parse(URL, {
-      download: true,
-      header: true,
-      complete: (results) => {
-        setLoading(false);
-        setData(results.data);
-      },
-    });
-  }, []);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+  const [data] = usePaparse(URL);
 
   const filteredPatient = data.filter((item) =>
     item.Timestamp.includes(patient)

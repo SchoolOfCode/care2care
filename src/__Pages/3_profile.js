@@ -1,3 +1,4 @@
+// import JSONPretty from "react-json-pretty";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -10,6 +11,7 @@ const Profile = () => {
     isAuthenticated && (
       <StyledProfile>
         <h1>PROFILE</h1>
+        {/* <JSONPretty data={user} /> */}
         <img src={user.picture} alt={user.name} />
         <div>
           <h2>{user.name}</h2>
