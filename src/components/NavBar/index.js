@@ -14,5 +14,5 @@ const NavBar = () => {
 export default NavBar;
 
 const StyledNavBar = styled.nav`
-  background: ${(props) => props.theme.accent1};
+  background: ${(props) => props.theme.bg};
 `;

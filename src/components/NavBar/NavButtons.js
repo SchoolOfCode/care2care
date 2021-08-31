@@ -3,8 +3,20 @@ import styled from "styled-components";
 import Icons from "../../theme/icons";
 import smallLogo from "../../images/smallLogo.svg";
 import SVG from "react-inlinesvg";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const NavBarButtons = () => {
+  const history = useHistory();
+  const [link, setLink] = useState(window.location.pathname);
+
+  useEffect(() => {
+    return history.listen((location) => {
+      setLink(location.pathname)
+      console.log(`You changed the page to: ${link}`);
+    });
+  }, [history, link]);
+
   const tabs = [
     {
       icon: <Icons.Patients />,
@@ -41,9 +53,15 @@ const NavBarButtons = () => {
       <div className="icons">
         {tabs.map((tab, index) => {
           return (
-            <Link to={tab.path} key={index}>
-              {tab.icon}
-            </Link>
+            <div
+              className={`tabs ${
+                link === tab.path ? "active" : ""
+              }`}
+            >
+              <Link to={tab.path} key={index}>
+                {tab.icon}
+              </Link>
+            </div>
           );
         })}
       </div>
@@ -72,7 +90,7 @@ const StyledNavBarButtons = styled.nav`
   }
 
   a {
-    color: ${(props) => props.theme.fontColor1};
+    color: ${(props) => props.theme.notActive};
     font-size: 24px;
   }
 
@@ -81,12 +99,21 @@ const StyledNavBarButtons = styled.nav`
       display: none;
     }
   }
+
+  .active {
+    border-bottom: 2px solid ${(props) => props.theme.accent1} !important;
+
+    a {
+      color: ${(props) => props.theme.accent1} !important;
+      font-weight: 630 !important;
+    }
+  }
 `;
 
 const StyledSVG = styled(SVG)`
   max-width: 77px;
 
   & path {
-    fill: ${(props) => props.theme.fontColor1};
+    fill: ${(props) => props.theme.fontColor2};
   }
 `;

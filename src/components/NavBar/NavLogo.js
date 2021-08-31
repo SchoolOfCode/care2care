@@ -12,9 +12,9 @@ export default NavLogo;
 
 const StyledNavLogo = styled.div`
   padding: 10px 0;
-  
+
   h3 {
     margin-left: 20px;
-    color: ${(props) => props.theme.fontColor1};
+    color: ${(props) => props.theme.fontColor2};
   }
 `;

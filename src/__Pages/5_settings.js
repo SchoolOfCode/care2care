@@ -11,7 +11,7 @@ const Settings = (props) => {
   return (
     <StyledSettings>
       <h1>SETTINGS</h1>
-      <div class="settings-options theme-toggle">
+      <div className="settings-options theme-toggle">
         <h3>Theme</h3>
         <Toggle
           isOn={isOn}
@@ -21,13 +21,13 @@ const Settings = (props) => {
           }}
         />
       </div>
-      <div class="settings-options theme-toggle">
+      <div className="settings-options theme-toggle">
         <h3>Help</h3>
       </div>
       <div class="button">
         <LogoutButton />
       </div>
-      <p class="team">UNITED NATIONS - 2021</p>
+      <p className="team">UNITED NATIONS - 2021</p>
     </StyledSettings>
   );
 };
