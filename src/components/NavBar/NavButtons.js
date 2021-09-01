@@ -12,37 +12,37 @@ const NavBarButtons = () => {
 
   useEffect(() => {
     return history.listen((location) => {
-      setLink(location.pathname)
+      setLink(location.pathname);
       console.log(`You changed the page to: ${link}`);
     });
   }, [history, link]);
 
   const tabs = [
     {
+      icon: <Icons.AddRecord />,
+      title: "New Record",
+      path: "/add",
+    },
+    {
       icon: <Icons.Patients />,
       title: "Patient",
       path: "/patient",
     },
-    {
-      icon: <Icons.AddRecord />,
-      title: "Add New Record",
-      path: "/add",
-    },
-    {
-      icon: <Icons.Profile />,
-      title: "Profile",
-      path: "/profile",
-    },
+    // {
+    //   icon: <Icons.Profile />,
+    //   title: "Profile",
+    //   path: "/profile",
+    // },
     {
       icon: <Icons.CheckRecords />,
       title: "Check Records",
       path: "/check",
     },
-    {
-      icon: <Icons.Settings />,
-      title: "Settings",
-      path: "/settings",
-    },
+    // {
+    //   icon: <Icons.Settings />,
+    //   title: "Settings",
+    //   path: "/settings",
+    // },
   ];
 
   return (
@@ -53,13 +53,10 @@ const NavBarButtons = () => {
       <div className="icons">
         {tabs.map((tab, index) => {
           return (
-            <div
-              className={`tabs ${
-                link === tab.path ? "active" : ""
-              }`}
-            >
-              <Link to={tab.path} key={index}>
-                {tab.icon}
+            <div className={`tabs ${link === tab.path ? "active" : ""}`}>
+              <Link to={tab.path} key={index} className="tab-name">
+                <div>{tab.icon}</div>
+                <p>{tab.title}</p>
               </Link>
             </div>
           );
@@ -90,6 +87,7 @@ const StyledNavBarButtons = styled.nav`
   }
 
   a {
+    text-decoration: none;
     color: ${(props) => props.theme.notActive};
     font-size: 24px;
   }
@@ -100,12 +98,24 @@ const StyledNavBarButtons = styled.nav`
     }
   }
 
+  .tab-name {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 33vw;
+
+    p{
+      font-size: 12px;
+
+    }
+  }
+
   .active {
     border-bottom: 2px solid ${(props) => props.theme.accent1} !important;
 
     a {
       color: ${(props) => props.theme.accent1} !important;
-      font-weight: 630 !important;
+      font-weight: bold;
     }
   }
 `;
