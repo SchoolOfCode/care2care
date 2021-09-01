@@ -23,4 +23,9 @@ body {
 body, html {
   overflow-x: hidden!important;
 }
+
+body::-webkit-scrollbar {
+  scrollbar-width: none;  
+  display: none;
+  }
 `;

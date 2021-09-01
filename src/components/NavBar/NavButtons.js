@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Icons from "../../theme/icons";
-import smallLogo from "../../images/smallLogo.svg";
-import SVG from "react-inlinesvg";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
@@ -47,9 +45,6 @@ const NavBarButtons = () => {
 
   return (
     <StyledNavBarButtons>
-      <div className="logo">
-        <StyledSVG src={smallLogo} alt="" />
-      </div>
       <div className="icons">
         {tabs.map((tab, index) => {
           return (
@@ -76,26 +71,17 @@ const StyledNavBarButtons = styled.nav`
   margin-bottom: 50px;
 
   .icons {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
-    @media (max-width: 798px) {
-      width: 100%;
-    }
   }
 
   a {
     text-decoration: none;
     color: ${(props) => props.theme.notActive};
     font-size: 24px;
-  }
-
-  .logo {
-    @media (max-width: 798px) {
-      display: none;
-    }
   }
 
   .tab-name {
@@ -117,13 +103,5 @@ const StyledNavBarButtons = styled.nav`
       color: ${(props) => props.theme.accent1} !important;
       font-weight: bold;
     }
-  }
-`;
-
-const StyledSVG = styled(SVG)`
-  max-width: 77px;
-
-  & path {
-    fill: ${(props) => props.theme.fontColor2};
   }
 `;

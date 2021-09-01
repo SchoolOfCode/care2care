@@ -23,10 +23,10 @@ const Main = ({ children }) => {
 export default Main;
 
 const StyledMain = styled.main`
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
   position: relative;
-  top: 150px;
+  top: 140px;
 
   h1 {
     margin-bottom: 20px;
