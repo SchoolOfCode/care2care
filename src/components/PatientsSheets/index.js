@@ -2,7 +2,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import usePaparse from "../__Hooks/usePaparse";
-import SelectPatient from "../SelectPatient";
 import { UserContext } from "../../App";
 
 const URL =
@@ -13,7 +12,7 @@ const PatientSheets = () => {
   const context = useContext(UserContext);
 
   const filteredPatient = data.filter((item) =>
-    item.Timestamp.includes(context.patient)
+    item.Patient.includes(context.patient)
   );
 
   const mapFiltered =
@@ -53,9 +52,7 @@ const PatientSheets = () => {
 
   return (
     <StyledPatientProfile>
-      <SelectPatient />
-
-      <div>{!context.patient ? "" : <PatientDetails />}</div>
+      <div>{!context.patient ? "No patient selected" : <PatientDetails />}</div>
     </StyledPatientProfile>
   );
 };

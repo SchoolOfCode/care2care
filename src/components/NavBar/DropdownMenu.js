@@ -45,6 +45,9 @@ const DropdownMenu = () => {
           <li onClick={() => setIsActive(false)}>
             <Link to="/settings">Settings</Link>
           </li>
+          <li onClick={() => setIsActive(false)}>
+            <Link to="/new">+ New Patient</Link>
+          </li>
         </ul>
       </nav>
     </StyledDropdown>
@@ -58,7 +61,7 @@ const StyledDropdown = styled.div`
     background: ${(props) => props.theme.fontColor2};
     border-radius: 8px;
     position: absolute;
-    top: 40px;
+    top: 50px;
     right: 20px;
     width: 50vw;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);

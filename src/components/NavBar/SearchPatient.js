@@ -59,14 +59,30 @@ const StyledSearch = styled.div`
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 55px;
     right: 40px;
-    background: ${props => props.theme.fontColor1};
-    width: 150px;
+    width: 50vw;
+    background: ${(props) => props.theme.fontColor2};
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+    border-radius: 8px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-20px);
     transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  }
+
+  li {
+    border-bottom: 1px solid ${(props) => props.theme.line};
+    color: ${(props) => props.theme.fontColor1};
+    padding: 7px 20px;
+    display: block;
+    :last-child {
+      border: none;
+    }
   }
 
   .active {
@@ -96,6 +112,7 @@ const StyledInput = styled.input`
   max-width: 100%;
   transition: all 0.5s;
   line-height: 20px;
+  color: transparent;
 
   &&::-webkit-search-decoration,
   &&::-webkit-search-cancel-button {
@@ -103,6 +120,7 @@ const StyledInput = styled.input`
   }
 
   &&[type="search"]:focus {
+    color: ${(props) => props.theme.fontColor2};
     width: 40vw;
     background-color: ${(props) => props.theme.fontColor1};
     border-color: ${(props) => props.theme.accent2};

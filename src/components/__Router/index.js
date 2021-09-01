@@ -6,6 +6,7 @@ const PatientProfile = lazy(() => import("../../__Pages/1_patientProfile"));
 const AddRecord = lazy(() => import("../../__Pages/2_addRecord"));
 const CheckRecord = lazy(() => import("../../__Pages/4_checkRecord"));
 const Settings = lazy(() => import("../../__Pages/5_settings"));
+const NewPatient = lazy(() => import("../../__Pages/6_newPatient"));
 
 const Content = () => {
   return (
@@ -17,6 +18,7 @@ const Content = () => {
           <Route path="/add" component={AddRecord} exact />
           <Route path="/check" component={CheckRecord} exact />
           <Route path="/settings" component={Settings} exact />
+          <Route path="/new" component={NewPatient} exact />
         </Suspense>
       </Switch>
   );

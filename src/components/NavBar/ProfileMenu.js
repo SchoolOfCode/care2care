@@ -25,9 +25,13 @@ const StyledProfileMenu = styled.div`
   flex-direction: row;
   align-items: center;
   text-align: right;
-  justify-content: space-around;
+  justify-content: flex-end;
   color: ${(props) => props.theme.fontColor1};
-  padding: 10px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
 
   h2 {
     font-size: 15px;
@@ -39,7 +43,7 @@ const StyledProfileMenu = styled.div`
 
   img {
     width: 40px;
-    margin: 5px 5px 0 0;
+    margin: 5px 5px 0 5px;
     border-radius: 50%;
     justify-self: center;
   }
