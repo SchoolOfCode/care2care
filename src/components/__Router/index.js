@@ -13,7 +13,6 @@ const Content = () => {
         <Suspense fallback={<div>Loading</div>}>
           <Route path="/" component={Profile} exact />
           <Route path="/profile" component={Profile} exact />
-          {/* idea: add a slug for each patient */}
           <Route path="/patient" component={PatientProfile} exact />
           <Route path="/add" component={AddRecord} exact />
           <Route path="/check" component={CheckRecord} exact />

@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
+import { UserContext } from "../../App";
 // import styled from "styled-components";
 import usePaparse from "../__Hooks/usePaparse";
-import { UserContext } from "../Main.js";
 
 const URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQk2shcRCfjZcMqWRoT8BXaIymooGq2pcd_heGDVrzQYnT0RL6hxHAq8M6FF9kZm5mILBmjg1qPQJc6/pub?output=csv";
 
-const SelectPatientDropdown = () => {
+const SelectPatient = () => {
   const [data] = usePaparse(URL);
   const context = useContext(UserContext);
   return (
@@ -19,7 +19,7 @@ const SelectPatientDropdown = () => {
           Select Patient
         </option>
         {data.map((item, index) => (
-          <option key={index} value={item.Timestamp}>
+          <option key={index} value={item.ID}>
             {item.Patient}
           </option>
         ))}
@@ -28,4 +28,4 @@ const SelectPatientDropdown = () => {
   );
 };
 
-export default SelectPatientDropdown;
+export default SelectPatient;

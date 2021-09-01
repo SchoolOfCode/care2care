@@ -48,7 +48,7 @@ const NavBarButtons = () => {
       <div className="icons">
         {tabs.map((tab, index) => {
           return (
-            <div className={`tabs ${link === tab.path ? "active" : ""}`}>
+            <div key={index} className={`tabs ${link === tab.path ? "active" : ""}`}>
               <Link to={tab.path} key={index} className="tab-name">
                 <div>{tab.icon}</div>
                 <p>{tab.title}</p>

@@ -6,7 +6,6 @@ import { BiMessageAltAdd, BiMessageAltCheck, BiDotsVertical } from "react-icons/
 const Icons = {
   Login: IoLogIn,
   Logout: IoLogOut,
-
   //NavBar
   Menu: BiDotsVertical,
   Patients: RiUserHeartFill,

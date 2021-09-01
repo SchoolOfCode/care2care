@@ -7,7 +7,7 @@ import LogoutButton from "../components/Form/LogoutButton";
 
 const Settings = (props) => {
   const [isOn, setIsOn] = useLocalStorage("isOn", false);
-  const changeTheme = useContext(UserContext);
+  const context = useContext(UserContext);
   return (
     <StyledSettings>
       <h1>SETTINGS</h1>
@@ -16,7 +16,7 @@ const Settings = (props) => {
         <Toggle
           isOn={isOn}
           handleToggle={() => {
-            changeTheme();
+            context.changeTheme();
             setIsOn(!isOn);
           }}
         />

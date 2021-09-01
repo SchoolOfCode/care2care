@@ -1,8 +1,11 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styled from "styled-components";
+import { UserContext } from "../../App";
+import SelectPatient from "../SelectPatient";
 
 const Form = () => {
+  const context = useContext(UserContext);
   const FORM_ACTION =
     "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdm4S7YQmIWc0SPJ-nhxMZkbdWQLwAt3wXJYwXfVTsdaHySvQ/formResponse";
   const [job, setJob] = useState("");
@@ -48,6 +51,8 @@ const Form = () => {
         style={{ display: "none" }}
       ></iframe>
 
+      <SelectPatient />
+
       <form
         action={FORM_ACTION}
         method="post"
@@ -61,6 +66,24 @@ const Form = () => {
           }
         }}
       >
+        <label>Patient ID</label>
+        <input
+          id={comments}
+          type="text"
+          name="entry.1575843700"
+          value={context.patient}
+          placeholder={"Type"}
+        />
+
+        <label>Patient</label>
+        <input
+          id={comments}
+          type="text"
+          name="entry.786976050"
+          value={context.patient}
+          placeholder={"Type"}
+        />
+
         <label htmlFor={job}>What is your job title?</label>
         <select
           id={job}
