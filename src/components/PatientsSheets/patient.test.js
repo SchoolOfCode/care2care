@@ -11,7 +11,8 @@ describe("patient information", () => {
       <UserContext.Provider value={{ patient }}>
         <PatientsSheets />
       </UserContext.Provider>
-  );
-    expect(screen.findByText("Email").toBeTruthy()
     );
-})
+//     const text = await.screen.findByText("Email");
+//     expect(text)("Email").toBeTruthy();
+//   });
+// });
