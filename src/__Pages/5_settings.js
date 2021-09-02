@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import Toggle from "../components/StyledToggle";
+import Toggle from "../components/Styled/StyledToggle";
 import useLocalStorage from "../components/__Hooks/useLocalStorage";
 import { useContext } from "react";
 import { UserContext } from "../App.jsx";
-import LogoutButton from "../components/Form/LogoutButton";
+import LogoutButton from "../components/Styled/LogoutButton";
 
 const Settings = (props) => {
   const [isOn, setIsOn] = useLocalStorage("isOn", false);
-  const changeTheme = useContext(UserContext);
+  const context = useContext(UserContext);
   return (
     <StyledSettings>
       <h1>SETTINGS</h1>
@@ -16,7 +16,7 @@ const Settings = (props) => {
         <Toggle
           isOn={isOn}
           handleToggle={() => {
-            changeTheme();
+            context.changeTheme();
             setIsOn(!isOn);
           }}
         />
@@ -36,7 +36,7 @@ export default Settings;
 
 const StyledSettings = styled.div`
   .settings-options {
-    margin: 0 40px 20px 20px;
+    margin: 0 20px 20px;
   }
 
   .theme-toggle {

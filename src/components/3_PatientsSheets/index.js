@@ -2,8 +2,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import usePaparse from "../__Hooks/usePaparse";
-import { UserContext } from "../Main.js";
-import SelectPatientDropdown from "../SelectPatientDropdown";
+import { UserContext } from "../../App";
 
 const URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQk2shcRCfjZcMqWRoT8BXaIymooGq2pcd_heGDVrzQYnT0RL6hxHAq8M6FF9kZm5mILBmjg1qPQJc6/pub?output=csv";
@@ -13,7 +12,7 @@ const PatientSheets = () => {
   const context = useContext(UserContext);
 
   const filteredPatient = data.filter((item) =>
-    item.Timestamp.includes(context.patient)
+    item.Patient.includes(context.patient)
   );
 
   const mapFiltered =
@@ -53,9 +52,7 @@ const PatientSheets = () => {
 
   return (
     <StyledPatientProfile>
-      <SelectPatientDropdown />
-
-      <div>{!context.patient ? "" : <PatientDetails />}</div>
+      <div>{!context.patient ? "No patient selected" : <PatientDetails />}</div>
     </StyledPatientProfile>
   );
 };
@@ -79,6 +76,8 @@ const StyledPatientProfile = styled.div`
   }
 
   .patient-info {
+    margin-top: 10px;
+    padding: 0 30px;
     text-align: left;
   }
 `;

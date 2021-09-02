@@ -1,9 +1,15 @@
 import styled from "styled-components";
+import DropdownMenu from "./DropdownMenu";
+import SearchPatient from "./SearchPatient";
 
 const NavLogo = () => {
   return (
     <StyledNavLogo>
       <h3>Care2Care</h3>
+      <div>
+        <SearchPatient />
+        <DropdownMenu />
+      </div>
     </StyledNavLogo>
   );
 };
@@ -11,10 +17,18 @@ const NavLogo = () => {
 export default NavLogo;
 
 const StyledNavLogo = styled.div`
-  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px 10px 20px;
 
   h3 {
-    margin-left: 20px;
     color: ${(props) => props.theme.fontColor2};
+  }
+
+  div {
+    display: flex;
+    align-items: center;
   }
 `;

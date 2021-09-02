@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Icons from "../../theme/icons";
-import smallLogo from "../../images/smallLogo.svg";
-import SVG from "react-inlinesvg";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
@@ -12,54 +10,51 @@ const NavBarButtons = () => {
 
   useEffect(() => {
     return history.listen((location) => {
-      setLink(location.pathname)
+      setLink(location.pathname);
       console.log(`You changed the page to: ${link}`);
     });
   }, [history, link]);
 
   const tabs = [
     {
-      icon: <Icons.Patients />,
-      title: "Patient",
-      path: "/patient",
-    },
-    {
-      icon: <Icons.AddRecord />,
-      title: "Add New Record",
+      icon: <Icons.AddRecord className="icon" />,
+      title: "New Record",
       path: "/add",
     },
     {
-      icon: <Icons.Profile />,
-      title: "Profile",
-      path: "/profile",
+      icon: <Icons.Patients className="icon" />,
+      title: "Patient",
+      path: "/patient",
     },
+    // {
+    //   icon: <Icons.Profile />,
+    //   title: "Profile",
+    //   path: "/profile",
+    // },
     {
-      icon: <Icons.CheckRecords />,
+      icon: <Icons.CheckRecords className="icon" />,
       title: "Check Records",
       path: "/check",
     },
-    {
-      icon: <Icons.Settings />,
-      title: "Settings",
-      path: "/settings",
-    },
+    // {
+    //   icon: <Icons.Settings />,
+    //   title: "Settings",
+    //   path: "/settings",
+    // },
   ];
 
   return (
     <StyledNavBarButtons>
-      <div className="logo">
-        <StyledSVG src={smallLogo} alt="" />
-      </div>
-      <div className="icons">
+      <div className="tab-content">
         {tabs.map((tab, index) => {
           return (
             <div
-              className={`tabs ${
-                link === tab.path ? "active" : ""
-              }`}
+              key={index}
+              className={`tabs ${link === tab.path ? "active" : ""}`}
             >
-              <Link to={tab.path} key={index}>
-                {tab.icon}
+              <Link to={tab.path} key={index} className="tab-name">
+                <div>{tab.icon}</div>
+                <p>{tab.title}</p>
               </Link>
             </div>
           );
@@ -72,31 +67,39 @@ const NavBarButtons = () => {
 export default NavBarButtons;
 
 const StyledNavBarButtons = styled.nav`
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 50px;
+  background: ${(props) => props.theme.navBg};
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
-  .icons {
-    width: 80%;
+  .tab-content {
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    align-items: center;
-    @media (max-width: 798px) {
-      width: 100%;
-    }
+    padding: 5px 2px 0;
+  }
+
+  .icon {
+    margin-right: 5px;
+    width: 20px;
+    margin-bottom: -3px;
   }
 
   a {
+    text-decoration: none;
     color: ${(props) => props.theme.notActive};
     font-size: 24px;
   }
 
-  .logo {
-    @media (max-width: 798px) {
-      display: none;
+  .tab-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 33vw;
+
+    p {
+      font-size: 12px;
     }
   }
 
@@ -105,15 +108,7 @@ const StyledNavBarButtons = styled.nav`
 
     a {
       color: ${(props) => props.theme.accent1} !important;
-      font-weight: 630 !important;
+      font-weight: bold;
     }
-  }
-`;
-
-const StyledSVG = styled(SVG)`
-  max-width: 77px;
-
-  & path {
-    fill: ${(props) => props.theme.fontColor2};
   }
 `;

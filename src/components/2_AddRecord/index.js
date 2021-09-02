@@ -1,8 +1,11 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useState } from "react";
-import styled from "styled-components";
+import { useContext, useState } from "react";
+import { UserContext } from "../../App";
+import { StyledButton } from "../Styled/StyledButton";
+import { StyledForm } from "../Styled/StyledForm";
 
 const Form = () => {
+  const context = useContext(UserContext);
   const FORM_ACTION =
     "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdm4S7YQmIWc0SPJ-nhxMZkbdWQLwAt3wXJYwXfVTsdaHySvQ/formResponse";
   const [job, setJob] = useState("");
@@ -61,14 +64,25 @@ const Form = () => {
           }
         }}
       >
+        <label>Patient</label>
+        <input
+          id={comments}
+          type="text"
+          name="entry.786976050"
+          value={context.patient}
+          placeholder="Patient not selected"
+          readOnly
+        />
+
         <label htmlFor={job}>What is your job title?</label>
         <select
           id={job}
           name="entry.31137095"
           onChange={(e) => setJob(e.target.value)}
           value={job}
+          required
         >
-          <option value="" disabled defaultValue>
+          <option value="" disabled defaultValue hidden>
             Select
           </option>
           <option value="Care Assistant">Care Assistant</option>
@@ -82,8 +96,9 @@ const Form = () => {
           name="entry.462237252"
           onChange={(e) => setRecords(e.target.value)}
           value={records}
+          required
         >
-          <option value="" disabled defaultValue>
+          <option value="" disabled defaultValue hidden>
             Select
           </option>
           <option value="Wellbeing">Wellbeing</option>
@@ -123,7 +138,7 @@ const Form = () => {
         />
 
         <div>
-          <button type="submit">SUBMIT</button>
+          <StyledButton type="submit">SUBMIT</StyledButton>
         </div>
 
         <div className="submitted-status">{formSubmitted}</div>
@@ -133,21 +148,3 @@ const Form = () => {
 };
 
 export default Form;
-
-const StyledForm = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex start;
-  margin: 0 auto;
-  width: 500px;
-
-  @media (max-width: 768px) {
-    width: 90vw;
-  }
-
-  input,
-  select {
-    width: 100%;
-  }
-`;

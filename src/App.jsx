@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./theme/globalStyle";
 // import logo from "./images/logo.svg";
@@ -15,7 +15,8 @@ const CheckAuthenticated = () => {
   return isAuthenticated ? <Authenticated /> : <NotAuthenticated />;
 };
 
-const App = () => {
+const App = ({ children }) => {
+  const [patient, setPatient] = useState("");
   const [theme, setTheme] = useLocalStorage("theme", "light");
   const changeTheme = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
@@ -26,8 +27,8 @@ const App = () => {
   return (
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyle />
-      <UserContext.Provider value={changeTheme}>
-        <CheckAuthenticated />
+      <UserContext.Provider value={{ patient, setPatient, changeTheme }}>
+        <CheckAuthenticated>{children}</CheckAuthenticated>
       </UserContext.Provider>
     </ThemeProvider>
   );
