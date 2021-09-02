@@ -10,8 +10,8 @@ const SearchPatient = (props) => {
   const focusRef = useRef(null);
   const [data] = usePaparse(URL);
   const [focus, setFocus] = useState(false);
+  const [search, setSearch] = useState("");
   const context = useContext(UserContext);
-  console.log(context.patient);
 
   useEffect(() => {
     const pageClickEvent = (e) => {
@@ -34,19 +34,27 @@ const SearchPatient = (props) => {
         <StyledInput
           ref={focusRef}
           type="search"
+          value={search}
           onFocus={() => setFocus(true)}
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
         />
       </form>
       <ul className={`${focus ? "active" : "inactive"}`}>
-        {data.map((item, index) => (
-          <li
-            key={index}
-            value={item.ID}
-            onClick={(e) => context.setPatient(item.Patient)}
-          >
-            {item.Patient}
-          </li>
-        ))}
+        {data
+          .filter((item) => {
+            return item.Patient.toLowerCase().includes(search.toLowerCase());
+          })
+          .map((item, index) => (
+            <li
+              key={index}
+              value={item.ID}
+              onClick={(e) => context.setPatient(item.Patient)}
+            >
+              {item.Patient}
+            </li>
+          ))}
       </ul>
     </StyledSearch>
   );
@@ -70,6 +78,7 @@ const StyledSearch = styled.div`
     border-radius: 8px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
+    cursor: pointer;
     visibility: hidden;
     transform: translateY(-20px);
     transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
@@ -82,6 +91,9 @@ const StyledSearch = styled.div`
     display: block;
     :last-child {
       border: none;
+    }
+    :hover {
+      background-color: ${(props) => props.theme.accent2};
     }
   }
 
@@ -113,6 +125,7 @@ const StyledInput = styled.input`
   transition: all 0.5s;
   line-height: 20px;
   color: transparent;
+  cursor: pointer;
 
   &&::-webkit-search-decoration,
   &&::-webkit-search-cancel-button {
