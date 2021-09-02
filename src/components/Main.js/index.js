@@ -17,12 +17,11 @@ const Main = () => {
 export default Main;
 
 const StyledMain = styled.main`
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
-  margin-top: 20px;
 
   h1 {
-    margin-bottom: 20px;
+    margin: 40px 0 20px;
     text-align: center;
   }
 `;

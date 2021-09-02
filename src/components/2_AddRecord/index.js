@@ -80,8 +80,9 @@ const Form = () => {
           name="entry.31137095"
           onChange={(e) => setJob(e.target.value)}
           value={job}
+          required
         >
-          <option value="" disabled defaultValue>
+          <option value="" disabled defaultValue hidden>
             Select
           </option>
           <option value="Care Assistant">Care Assistant</option>
@@ -95,8 +96,9 @@ const Form = () => {
           name="entry.462237252"
           onChange={(e) => setRecords(e.target.value)}
           value={records}
+          required
         >
-          <option value="" disabled defaultValue>
+          <option value="" disabled defaultValue hidden>
             Select
           </option>
           <option value="Wellbeing">Wellbeing</option>

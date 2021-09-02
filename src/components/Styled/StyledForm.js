@@ -16,13 +16,32 @@ export const StyledForm = styled.div`
     margin: 15px 0;
   }
 
-  input,
-  select {
-    width: 100%;
-    padding: 5px;
+  input {
+    :read-only {
+      color: ${(props) => props.theme.notActive};
+      cursor: not-allowed;
+    }
   }
 
-  input:read-only {
-    color: ${(props) => props.theme.notActive};
+  select {
+    color: #333;
+    cursor: pointer;
+    :required:invalid {
+      color: gray;
+    }
+  }
+
+  option {
+    color: #333;
+  }
+
+  input,
+  select,
+  option {
+    width: 100%;
+    padding: 5px;
+    :focus {
+      outline: none;
+    }
   }
 `;
