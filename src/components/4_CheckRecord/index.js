@@ -20,7 +20,6 @@ const CheckRecordSheets = () => {
     filteredRecord.map((item, index) => {
       return (
         <>
-          <h3>{context.patient} </h3>
           <h3>Record: {item.Records}</h3>
           <p>Comment: {item.Comments}</p>
           <p>
@@ -32,6 +31,12 @@ const CheckRecordSheets = () => {
       );
     });
 
-  return <>{mapFiltered}</>;
+  return (
+    <>
+      {" "}
+      <h3>{context.patient}</h3>
+      {mapFiltered}
+    </>
+  );
 };
 export default CheckRecordSheets;
