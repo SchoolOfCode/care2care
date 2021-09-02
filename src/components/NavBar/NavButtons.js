@@ -17,12 +17,12 @@ const NavBarButtons = () => {
 
   const tabs = [
     {
-      icon: <Icons.AddRecord />,
+      icon: <Icons.AddRecord className="icon" />,
       title: "New Record",
       path: "/add",
     },
     {
-      icon: <Icons.Patients />,
+      icon: <Icons.Patients className="icon" />,
       title: "Patient",
       path: "/patient",
     },
@@ -32,7 +32,7 @@ const NavBarButtons = () => {
     //   path: "/profile",
     // },
     {
-      icon: <Icons.CheckRecords />,
+      icon: <Icons.CheckRecords className="icon" />,
       title: "Check Records",
       path: "/check",
     },
@@ -44,38 +44,42 @@ const NavBarButtons = () => {
   ];
 
   return (
-    <StyledNavBarButtons>
-      <div className="icons">
-        {tabs.map((tab, index) => {
-          return (
-            <div key={index} className={`tabs ${link === tab.path ? "active" : ""}`}>
-              <Link to={tab.path} key={index} className="tab-name">
-                <div>{tab.icon}</div>
-                <p>{tab.title}</p>
-              </Link>
-            </div>
-          );
-        })}
-      </div>
-    </StyledNavBarButtons>
+      <StyledNavBarButtons>
+        <div className="tab-content">
+          {tabs.map((tab, index) => {
+            return (
+              <div
+                key={index}
+                className={`tabs ${link === tab.path ? "active" : ""}`}
+              >
+                <Link to={tab.path} key={index} className="tab-name">
+                  <div>{tab.icon}</div>
+                  <p>{tab.title}</p>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </StyledNavBarButtons>
   );
 };
 
 export default NavBarButtons;
 
 const StyledNavBarButtons = styled.nav`
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 50px;
+  background: ${(props) => props.theme.navBg};
 
-  .icons {
+  .tab-content {
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    align-items: center;
+  }
+
+  .icon {
+    margin-right: 5px;
+    width: 20px;
+    margin-bottom: -3px;
   }
 
   a {
@@ -86,13 +90,14 @@ const StyledNavBarButtons = styled.nav`
 
   .tab-name {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     width: 33vw;
 
-    p{
+    p {
       font-size: 12px;
-
     }
   }
 

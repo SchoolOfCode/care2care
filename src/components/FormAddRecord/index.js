@@ -1,8 +1,8 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useContext, useState } from "react";
 import { UserContext } from "../../App";
-import SelectPatient from "../SelectPatient";
-import { StyledForm } from "../StyledForm";
+import { StyledButton } from "../Styled/StyledButton";
+import { StyledForm } from "../Styled/StyledForm";
 
 const Form = () => {
   const context = useContext(UserContext);
@@ -51,8 +51,6 @@ const Form = () => {
         style={{ display: "none" }}
       ></iframe>
 
-      <SelectPatient />
-
       <form
         action={FORM_ACTION}
         method="post"
@@ -66,22 +64,14 @@ const Form = () => {
           }
         }}
       >
-        <label>Patient ID</label>
-        <input
-          id={comments}
-          type="text"
-          name="entry.1575843700"
-          value={context.patient}
-          placeholder={"Type"}
-        />
-
         <label>Patient</label>
         <input
           id={comments}
           type="text"
           name="entry.786976050"
           value={context.patient}
-          placeholder={"Type"}
+          placeholder="Patient not selected"
+          readOnly
         />
 
         <label htmlFor={job}>What is your job title?</label>
@@ -146,7 +136,7 @@ const Form = () => {
         />
 
         <div>
-          <button type="submit">SUBMIT</button>
+          <StyledButton type="submit">SUBMIT</StyledButton>
         </div>
 
         <div className="submitted-status">{formSubmitted}</div>

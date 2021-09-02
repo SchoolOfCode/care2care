@@ -76,7 +76,7 @@ const StyledSearch = styled.div`
   }
 
   li {
-    border-bottom: 1px solid ${(props) => props.theme.line};
+    border-bottom: 1px solid ${(props) => props.theme.notActive};
     color: ${(props) => props.theme.fontColor1};
     padding: 7px 20px;
     display: block;
@@ -100,7 +100,7 @@ const StyledInput = styled.input`
   box-sizing: content-box;
   font-family: inherit;
   font-size: 100%;
-  background: ${(props) => props.theme.bg}
+  background: transparent
     url("http://www.clker.com/cliparts/8/n/U/M/V/E/search-icon.svg") no-repeat
     right 8px center;
   background-size: 18px;

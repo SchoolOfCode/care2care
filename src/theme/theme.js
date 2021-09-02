@@ -1,5 +1,6 @@
 const LightTheme = {
   bg: "#f5f5f5",
+  navBg: "#ffffff",
   fontColor1: "#f5f5f5",
   fontColor2: "#333333",
   accent1: "#49C6E5",
@@ -8,7 +9,8 @@ const LightTheme = {
 };
 
 const DarkTheme = {
-  bg: "#2D3F50",
+  bg: "#243546",
+  navBg: "#314455",
   fontColor1: "#333333",
   fontColor2: "#f5f5f5",
   accent1: "#00BD9D",

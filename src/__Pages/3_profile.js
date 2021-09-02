@@ -2,7 +2,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { StyledButton } from "../components/StyledButton";
+import { StyledButton } from "../components/Styled/StyledButton";
 
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();

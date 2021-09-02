@@ -10,17 +10,17 @@ const NewPatient = lazy(() => import("../../__Pages/6_newPatient"));
 
 const Content = () => {
   return (
-      <Switch>
-        <Suspense fallback={<div>Loading</div>}>
-          <Route path="/" component={Profile} exact />
-          <Route path="/profile" component={Profile} exact />
-          <Route path="/patient" component={PatientProfile} exact />
-          <Route path="/add" component={AddRecord} exact />
-          <Route path="/check" component={CheckRecord} exact />
-          <Route path="/settings" component={Settings} exact />
-          <Route path="/new" component={NewPatient} exact />
-        </Suspense>
-      </Switch>
+    <Switch>
+      <Suspense fallback={<div>Loading</div>}>
+        <Route path="/" component={Profile} exact />
+        <Route path="/profile" component={Profile} exact />
+        <Route path="/patient" component={PatientProfile} exact />
+        <Route path="/add" component={AddRecord} exact />
+        <Route path="/check" component={CheckRecord} exact />
+        <Route path="/settings" component={Settings} exact />
+        <Route path="/new" component={NewPatient} exact />
+      </Suspense>
+    </Switch>
   );
 };
 

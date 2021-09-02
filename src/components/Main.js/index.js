@@ -19,8 +19,7 @@ export default Main;
 const StyledMain = styled.main`
   height: 100vh;
   width: 100vw;
-  position: relative;
-  top: 140px;
+  margin-top: 20px;
 
   h1 {
     margin-bottom: 20px;

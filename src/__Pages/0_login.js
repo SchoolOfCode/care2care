@@ -3,7 +3,7 @@
 //change the login page from auth0 to a custom one with universal login
 //lock which users can log in - has to be done in auth0 website
 
-import LoginButton from "../components/Form/LoginButton.js";
+import LoginButton from "../components/FormAddRecord/LoginButton.js";
 import NavBar from "../components/NavBar/index.js";
 import Main from "../components/Main.js";
 import styled from "styled-components";

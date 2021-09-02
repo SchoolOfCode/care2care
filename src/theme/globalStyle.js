@@ -21,7 +21,7 @@ body {
 }
 
 body, html {
-  overflow-x: hidden!important;
+  /* overflow-x: hidden!important; */
 }
 
 body::-webkit-scrollbar {

@@ -76,6 +76,8 @@ const StyledPatientProfile = styled.div`
   }
 
   .patient-info {
+    margin-top: 10px;
+    padding: 0 30px;
     text-align: left;
   }
 `;

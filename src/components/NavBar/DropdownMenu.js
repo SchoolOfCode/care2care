@@ -85,7 +85,7 @@ const StyledDropdown = styled.div`
   }
 
   .menu li {
-    border-bottom: 1px solid ${(props) => props.theme.fontColor1};
+    border-bottom: 1px solid ${(props) => props.theme.notActive};
     text-align: right;
     :last-child {
       border: none;

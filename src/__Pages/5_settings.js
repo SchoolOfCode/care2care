@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import Toggle from "../components/StyledToggle";
+import Toggle from "../components/Styled/StyledToggle";
 import useLocalStorage from "../components/__Hooks/useLocalStorage";
 import { useContext } from "react";
 import { UserContext } from "../App.jsx";
-import LogoutButton from "../components/Form/LogoutButton";
+import LogoutButton from "../components/FormAddRecord/LogoutButton";
 
 const Settings = (props) => {
   const [isOn, setIsOn] = useLocalStorage("isOn", false);
@@ -36,7 +36,7 @@ export default Settings;
 
 const StyledSettings = styled.div`
   .settings-options {
-    margin: 0 40px 20px 20px;
+    margin: 0 20px 20px;
   }
 
   .theme-toggle {

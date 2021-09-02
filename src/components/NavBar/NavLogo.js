@@ -17,12 +17,11 @@ const NavLogo = () => {
 export default NavLogo;
 
 const StyledNavLogo = styled.div`
-  margin-top: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 20px 10px 10px 20px;
 
   h3 {
     color: ${(props) => props.theme.fontColor2};
