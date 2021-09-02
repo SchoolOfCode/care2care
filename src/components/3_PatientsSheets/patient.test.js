@@ -12,7 +12,7 @@ describe("patient information", () => {
         <PatientsSheets />
       </UserContext.Provider>
     );
-//     const text = await.screen.findByText("Email");
-//     expect(text)("Email").toBeTruthy();
-//   });
-// });
+    // const text = await.screen.findByText("Email");
+    // expect(text)("Email").toBeTruthy();
+  });
+});

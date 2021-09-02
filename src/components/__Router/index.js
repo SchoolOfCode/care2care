@@ -13,6 +13,7 @@ const Content = () => {
     <Switch>
       <Suspense fallback={<div>Loading</div>}>
         <Route path="/" component={Profile} exact />
+        <Route path={process.env.PUBLIC_URL + "/"} />
         <Route path="/profile" component={Profile} exact />
         <Route path="/patient" component={PatientProfile} exact />
         <Route path="/add" component={AddRecord} exact />
