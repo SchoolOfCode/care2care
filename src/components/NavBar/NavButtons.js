@@ -44,23 +44,23 @@ const NavBarButtons = () => {
   ];
 
   return (
-      <StyledNavBarButtons>
-        <div className="tab-content">
-          {tabs.map((tab, index) => {
-            return (
-              <div
-                key={index}
-                className={`tabs ${link === tab.path ? "active" : ""}`}
-              >
-                <Link to={tab.path} key={index} className="tab-name">
-                  <div>{tab.icon}</div>
-                  <p>{tab.title}</p>
-                </Link>
-              </div>
-            );
-          })}
-        </div>
-      </StyledNavBarButtons>
+    <StyledNavBarButtons>
+      <div className="tab-content">
+        {tabs.map((tab, index) => {
+          return (
+            <div
+              key={index}
+              className={`tabs ${link === tab.path ? "active" : ""}`}
+            >
+              <Link to={tab.path} key={index} className="tab-name">
+                <div>{tab.icon}</div>
+                <p>{tab.title}</p>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+    </StyledNavBarButtons>
   );
 };
 
@@ -68,12 +68,14 @@ export default NavBarButtons;
 
 const StyledNavBarButtons = styled.nav`
   background: ${(props) => props.theme.navBg};
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
   .tab-content {
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
+    padding: 5px 2px 0;
   }
 
   .icon {

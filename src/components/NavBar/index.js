@@ -3,14 +3,12 @@ import NavBarButtons from "./NavButtons";
 import NavLogo from "./NavLogo";
 import Sticky from "react-sticky-el";
 
-
 const NavBar = () => {
   return (
     <StyledNavBar>
       <NavLogo />
       <Sticky>
-
-      <NavBarButtons />
+        <NavBarButtons />
       </Sticky>
     </StyledNavBar>
   );
@@ -19,7 +17,7 @@ const NavBar = () => {
 export default NavBar;
 
 const StyledNavBar = styled.nav`
-  background: ${(props) => props.theme.navBg};
- height: 90px;
+  background-color: ${(props) => props.theme.navBg};
+  height: 90px;
   width: 100vw;
 `;
