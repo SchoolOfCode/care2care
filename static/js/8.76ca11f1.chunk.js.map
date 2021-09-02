@@ -1,0 +1,1 @@
+{"version":3,"sources":["__Pages/6_newPatient.js"],"names":["NewPatient"],"mappings":"yHAMeA,UANI,WACf,OACI","file":"static/js/8.76ca11f1.chunk.js","sourcesContent":["const NewPatient = () => {\r\n    return ( \r\n        <h1>Add New Patient</h1>\r\n     );\r\n}\r\n \r\nexport default NewPatient;"],"sourceRoot":""}
