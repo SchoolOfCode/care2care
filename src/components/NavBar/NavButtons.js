@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Icons from "../../theme/icons";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { DisplayFlex } from "../Styled/DisplayFlex";
 
 const NavBarButtons = () => {
   const history = useHistory();
@@ -33,8 +34,8 @@ const NavBarButtons = () => {
     // },
     {
       icon: <Icons.CheckRecords className="icon" />,
-      title: "Check Records",
-      path: "/check",
+      title: "Daily Logs",
+      path: "/logs",
     },
     // {
     //   icon: <Icons.Settings />,
@@ -71,10 +72,10 @@ const StyledNavBarButtons = styled.nav`
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
   .tab-content {
-    width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
+    ${DisplayFlex}
     justify-content: space-around;
+    flex-flow: row nowrap;
+    width: 100%;
     padding: 5px 2px 0;
   }
 
@@ -91,10 +92,7 @@ const StyledNavBarButtons = styled.nav`
   }
 
   .tab-name {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    ${DisplayFlex}
     text-align: center;
     width: 33vw;
 

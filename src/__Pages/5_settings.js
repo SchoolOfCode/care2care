@@ -4,6 +4,7 @@ import useLocalStorage from "../components/__Hooks/useLocalStorage";
 import { useContext } from "react";
 import { UserContext } from "../App.jsx";
 import LogoutButton from "../components/Styled/LogoutButton";
+import { DisplayFlex } from "../components/Styled/DisplayFlex";
 
 const Settings = (props) => {
   const [isOn, setIsOn] = useLocalStorage("isOn", false);
@@ -40,10 +41,9 @@ const StyledSettings = styled.div`
   }
 
   .theme-toggle {
-    display: flex;
-    flex-direction: row;
+    ${DisplayFlex}
     justify-content: space-between;
-    align-items: center;
+
   }
 
   .button {

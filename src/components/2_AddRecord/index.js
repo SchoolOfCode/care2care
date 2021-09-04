@@ -64,9 +64,8 @@ const Form = () => {
           }
         }}
       >
-        <label>Patient</label>
+        {/* Patient =======================================================================================*/}
         <input
-          id={comments}
           type="text"
           name="entry.786976050"
           value={context.patient}
@@ -74,32 +73,31 @@ const Form = () => {
           readOnly
         />
 
-        <label htmlFor={job}>What is your job title?</label>
+        {/* Job Title [Staff] =======================================================================================*/}
         <select
-          id={job}
           name="entry.31137095"
           onChange={(e) => setJob(e.target.value)}
           value={job}
           required
         >
           <option value="" disabled defaultValue hidden>
-            Select
+            Job Title [Staff]
           </option>
           <option value="Care Assistant">Care Assistant</option>
           <option value="Senior Care Assistant">Senior Care Assistant</option>
           <option value="Manager">Manager</option>
         </select>
 
-        <label htmlFor={records}>Records</label>
+        {/* Records =======================================================================================*/}
+
         <select
-          id={records}
           name="entry.462237252"
           onChange={(e) => setRecords(e.target.value)}
           value={records}
           required
         >
           <option value="" disabled defaultValue hidden>
-            Select
+            Records
           </option>
           <option value="Wellbeing">Wellbeing</option>
           <option value="Personal Hygiene">Personal Hygiene</option>
@@ -118,19 +116,18 @@ const Form = () => {
           <option value="Resident Transfer Form">Resident Transfer Form</option>
         </select>
 
-        <label htmlFor={comments}>Comments</label>
+        {/* Comments =======================================================================================*/}
+
         <input
-          id={comments}
           type="text"
           name="entry.1817980315"
           value={comments}
-          placeholder={"Type"}
+          placeholder={"Comments"}
           onChange={(e) => setComments(e.target.value)}
         />
 
-        <label htmlFor={user.email}>HCP Email</label>
         <input
-          id={user.email}
+        className="hidden"
           type="text"
           name="entry.1626627283"
           value={user.email}

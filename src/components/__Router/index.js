@@ -16,7 +16,7 @@ const Content = () => {
         <Route path="/profile" component={Profile} exact />
         <Route path="/patient" component={PatientProfile} exact />
         <Route path="/add" component={AddRecord} exact />
-        <Route path="/check" component={CheckRecord} exact />
+        <Route path="/logs" component={CheckRecord} exact />
         <Route path="/settings" component={Settings} exact />
         <Route path="/new" component={NewPatient} exact />
       </Suspense>

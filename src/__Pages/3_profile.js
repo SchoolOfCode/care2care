@@ -2,6 +2,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { DisplayFlex } from "../components/Styled/DisplayFlex";
 import { StyledButton } from "../components/Styled/StyledButton";
 
 const Profile = () => {
@@ -33,8 +34,8 @@ const Profile = () => {
 export default Profile;
 
 const StyledProfile = styled.div`
+  ${DisplayFlex}
   margin-bottom: 30px;
-  display: flex;
   flex-direction: column;
   text-align: center;
 
@@ -43,7 +44,6 @@ const StyledProfile = styled.div`
     margin: 20px auto 0;
     border: 5px solid ${(props) => props.theme.accent1};
     border-radius: 50%;
-    justify-self: center;
   }
 
   .buttons {

@@ -21,11 +21,6 @@ const ProfileMenu = () => {
 export default ProfileMenu;
 
 const StyledProfileMenu = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: right;
-  justify-content: flex-end;
   color: ${(props) => props.theme.fontColor1};
 
   div {

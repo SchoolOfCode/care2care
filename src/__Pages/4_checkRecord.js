@@ -6,7 +6,7 @@
 
 const CheckRecord = () => {
     return ( 
-        <h1>CHECK RECORD</h1>
+        <h1>DAILY LOGS</h1>
      );
 }
  

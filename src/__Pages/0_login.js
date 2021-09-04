@@ -9,6 +9,7 @@ import Main from "../components/Main.js";
 import styled from "styled-components";
 import logo from "../images/logo.svg";
 import SVG from "react-inlinesvg";
+import { DisplayFlex } from "../components/Styled/DisplayFlex.js";
 
 export const NotAuthenticated = () => {
   return (
@@ -29,13 +30,11 @@ export const Authenticated = () => {
 };
 
 const StyledLogin = styled.div`
+  ${DisplayFlex}
+  flex-direction: column;
   background: ${(props) => props.theme.bg};
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `;
 
 const StyledSVG = styled(SVG)`

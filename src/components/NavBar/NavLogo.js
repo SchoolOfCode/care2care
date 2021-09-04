@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DisplayFlex } from "../Styled/DisplayFlex";
 import DropdownMenu from "./DropdownMenu";
 import SearchPatient from "./SearchPatient";
 
@@ -17,10 +18,8 @@ const NavLogo = () => {
 export default NavLogo;
 
 const StyledNavLogo = styled.div`
-  display: flex;
-  flex-direction: row;
+  ${DisplayFlex}
   justify-content: space-between;
-  align-items: center;
   padding: 20px 10px 10px 20px;
 
   h3 {
@@ -28,7 +27,6 @@ const StyledNavLogo = styled.div`
   }
 
   div {
-    display: flex;
-    align-items: center;
+    ${DisplayFlex}
   }
 `;

@@ -1,3 +1,5 @@
+//stretch goal: only show names when start typing
+
 import styled from "styled-components";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import usePaparse from "../__Hooks/usePaparse";
@@ -66,15 +68,15 @@ const StyledSearch = styled.div`
   ul {
     display: flex;
     flex-direction: column;
+    text-align: right;
     position: absolute;
     top: 55px;
     right: 40px;
-    width: 50vw;
-    background: ${(props) => props.theme.fontColor2};
+    width: auto;
+    background: ${(props) => props.theme.menuBg};
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: right;
     border-radius: 8px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;

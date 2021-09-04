@@ -1,10 +1,9 @@
 import styled from "styled-components";
+import { DisplayFlex } from "./DisplayFlex";
 
 export const StyledForm = styled.div`
-  display: flex;
+  ${DisplayFlex}
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 0 auto;
   width: 500px;
 
@@ -16,10 +15,18 @@ export const StyledForm = styled.div`
     margin: 15px 0;
   }
 
+  .hidden {
+    display: none;
+  }
+
   input {
     :read-only {
       color: ${(props) => props.theme.notActive};
       cursor: not-allowed;
+
+      :focus {
+        border-bottom: 2px #9b0303 solid;
+      }
     }
   }
 
@@ -39,9 +46,14 @@ export const StyledForm = styled.div`
   select,
   option {
     width: 100%;
-    padding: 5px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 1px ${(props) => props.theme.notActive} solid;
+    border-radius: 5px 5px 0 0;
     :focus {
       outline: none;
+      border-bottom: 2px ${(props) => props.theme.accent1} solid;
     }
   }
 `;

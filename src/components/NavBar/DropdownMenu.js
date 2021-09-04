@@ -58,12 +58,12 @@ export default DropdownMenu;
 
 const StyledDropdown = styled.div`
   .menu {
-    background: ${(props) => props.theme.fontColor2};
+    background: ${(props) => props.theme.menuBg};
     border-radius: 8px;
     position: absolute;
     top: 50px;
     right: 20px;
-    width: 50vw;
+    width: auto;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
     visibility: hidden;
