@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import Toggle from "../components/Styled/StyledToggle";
-import useLocalStorage from "../components/__Hooks/useLocalStorage";
+import Toggle from "../Styled/StyledToggle";
+import useLocalStorage from "../__Hooks/useLocalStorage";
 import { useContext } from "react";
-import { UserContext } from "../App.jsx";
-import LogoutButton from "../components/Styled/LogoutButton";
-import { DisplayFlex } from "../components/Styled/DisplayFlex";
+import { UserContext } from "../../App.jsx";
+import LogoutButton from "../Styled/LogoutButton";
+import { DisplayFlex } from "../Styled/DisplayFlex";
 
 const Settings = (props) => {
   const [isOn, setIsOn] = useLocalStorage("isOn", false);
@@ -36,7 +36,8 @@ const Settings = (props) => {
 export default Settings;
 
 const StyledSettings = styled.div`
-  height: 75vh;
+  height: calc(100vh - 140px);
+
   .settings-options {
     margin: 0 20px 20px;
   }

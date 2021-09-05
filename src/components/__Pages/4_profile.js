@@ -2,31 +2,32 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { DisplayFlex } from "../components/Styled/DisplayFlex";
-import { StyledButton } from "../components/Styled/StyledButton";
+import { StyledButton } from "../Styled/StyledButton";
 
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
 
   return (
     isAuthenticated && (
-      <StyledProfile>
+      <>
         <h1>PROFILE</h1>
-        {/* <JSONPretty data={user} /> */}
-        <img src={user.picture} alt={user.name} />
-        <div>
-          <h2>{user.name}</h2>
-          <p>{user.email}</p>
-        </div>
-        <div className="buttons">
-          <StyledButton>
-            <Link to="/patient">Patients</Link>
-          </StyledButton>
-          <StyledButton>
-            <Link to="/check">Records</Link>
-          </StyledButton>
-        </div>
-      </StyledProfile>
+        <StyledProfile>
+          {/* <JSONPretty data={user} /> */}
+          <img src={user.picture} alt={user.name} />
+          <div>
+            <h2>{user.name}</h2>
+            <p>{user.email}</p>
+          </div>
+          <div className="buttons">
+            <StyledButton>
+              <Link to="/patient">Patients</Link>
+            </StyledButton>
+            <StyledButton>
+              <Link to="/check">Records</Link>
+            </StyledButton>
+          </div>
+        </StyledProfile>
+      </>
     )
   );
 };
@@ -34,8 +35,8 @@ const Profile = () => {
 export default Profile;
 
 const StyledProfile = styled.div`
-  ${DisplayFlex}
-  margin-bottom: 30px;
+  height: calc(100vh - 150px);
+  display: flex;
   flex-direction: column;
   text-align: center;
 
@@ -51,6 +52,10 @@ const StyledProfile = styled.div`
 
     button {
       margin: 0 10px;
+
+      @media (max-width: 738px) {
+        width: 40vw;
+      }
     }
 
     a {

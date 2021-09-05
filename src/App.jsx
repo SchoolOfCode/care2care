@@ -1,12 +1,10 @@
 import React, { createContext, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./theme/globalStyle";
-// import logo from "./images/logo.svg";
 import themes from "./theme/theme";
 import useLocalStorage from "./components/__Hooks/useLocalStorage";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Authenticated, NotAuthenticated } from "./__Pages/0_login.js";
-// import Settings from "./__Pages/5_settings";
+import { Authenticated, NotAuthenticated } from "../src/components/__Pages/0_login";
 
 export const UserContext = createContext();
 

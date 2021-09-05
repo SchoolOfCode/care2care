@@ -3,13 +3,13 @@
 //change the login page from auth0 to a custom one with universal login
 //lock which users can log in - has to be done in auth0 website
 
-import LoginButton from "../components/Styled/LoginButton.js";
-import NavBar from "../components/NavBar/index.js";
-import Main from "../components/Main.js";
 import styled from "styled-components";
-import logo from "../images/logo.svg";
 import SVG from "react-inlinesvg";
-import { DisplayFlex } from "../components/Styled/DisplayFlex.js";
+import LoginButton from "../Styled/LoginButton.js";
+import NavBar from "../NavBar/index.js";
+import Main from "../Main.js";
+import logo from "../../images/logo.svg";
+import { DisplayFlex } from "../Styled/DisplayFlex.js";
 
 export const NotAuthenticated = () => {
   return (

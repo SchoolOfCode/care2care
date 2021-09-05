@@ -21,6 +21,7 @@ const StyledMain = styled.main`
 
   h1 {
     margin: 40px 0 20px;
+    height: 50px;
     text-align: center;
   }
 `;

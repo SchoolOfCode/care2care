@@ -1,3 +1,8 @@
+//TO-DO ====================================================================================================================
+//add a button/link that takes user to check the records of that user
+//add a button/link that takes user to add new record
+//when user is taken to the other screen, the dropdown is gonna be pre-set to whatever that patient is
+
 // import JSONPretty from "react-json-pretty";
 import React, { useContext } from "react";
 import styled from "styled-components";
@@ -9,7 +14,7 @@ import NoPatientSelected from "../Styled/NoPatientSelected";
 const URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQk2shcRCfjZcMqWRoT8BXaIymooGq2pcd_heGDVrzQYnT0RL6hxHAq8M6FF9kZm5mILBmjg1qPQJc6/pub?output=csv";
 
-const PatientSheets = () => {
+const PatientProfile = () => {
   const [data] = usePaparse(URL);
   const context = useContext(UserContext);
 
@@ -94,14 +99,17 @@ const PatientSheets = () => {
 
   return (
     <StyledPatientProfile>
+      <h1>Patient Profile</h1>
       <div>{!context.patient ? <NoPatientSelected /> : <PatientDetails />}</div>
     </StyledPatientProfile>
   );
 };
 
-export default PatientSheets;
+export default PatientProfile;
 
 const StyledPatientProfile = styled.div`
+  height: calc(100vh - 140px);
+
   ul {
     ${DisplayFlex}
     flex-direction: column;

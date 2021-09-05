@@ -1,15 +1,21 @@
+//TO-DO ====================================================================================================================
+//add dropdown to selct patient (like in 1_patientProfile)
+//fetch data from 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRylb8I0x2LH26SwEXfv7HXfN_91VfLiOlEWxFDWp7VDxiS76XdGIqOoM8nNE9Yx2-dtVR0CyXjpRSh/pub?output=csv'
+//filter which patient we are fetching that data
+//add a button that takes user to that patient profile
+
 import React, { useContext } from "react";
 import usePaparse from "../__Hooks/usePaparse";
-import { UserContext } from "../../App";
+import { UserContext } from "../../App.jsx";
 import NoPatientSelected from "../Styled/NoPatientSelected";
-import styled from "styled-components";
 import { DisplayFlex } from "../Styled/DisplayFlex";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRylb8I0x2LH26SwEXfv7HXfN_91VfLiOlEWxFDWp7VDxiS76XdGIqOoM8nNE9Yx2-dtVR0CyXjpRSh/pub?output=csv";
 
-const DailyLogsSheets = () => {
+const DailyLogs = () => {
   const [data] = usePaparse(URL);
   const context = useContext(UserContext);
   const filteredRecord = data.filter((item) =>
@@ -48,13 +54,16 @@ const DailyLogsSheets = () => {
 
   return (
     <StyledDailyLogs>
+      <h1>Daily Logs</h1>
       <div>{!context.patient ? <NoPatientSelected /> : <DailyLogs />}</div>
     </StyledDailyLogs>
   );
 };
-export default DailyLogsSheets;
+export default DailyLogs;
 
 const StyledDailyLogs = styled.div`
+  height: calc(100vh - 140px);
+  
   a {
     text-decoration: none;
     color: ${(props) => props.theme.fontColor1};
