@@ -2,7 +2,7 @@
 //add the dropdown to select patient, that is gonna be sent to the form so we can fetch which patient we want to check the records from
 
 import { useAuth0 } from "@auth0/auth0-react";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { UserContext } from "../../App.jsx";
 import { StyledButton } from "../Styled/StyledButton";
@@ -29,22 +29,33 @@ const AddRecord = () => {
 
   const validateForm = () => {
     if (!validateComments()) {
-      setSubmitted(false);
-      <p className="form-not-submitted">❌ Form not submitted</p>;
+      setFormSubmitted(
+        <p className="form-not-submitted">❌ Form not submitted</p>
+      );
       return false;
     } else {
-      setSubmitted(true);
       setFormSubmitted(<p className="form-submitted">✔️ Form submitted</p>);
       return true;
     }
   };
 
-  // useEffect(() => {
-  //   if (submitted) {
-  //     setComments("");
-  //     setSubmitted(false)
-  //   }
-  // }, [submitted]);
+  useEffect(() => {
+    if (submitted) {
+      setRecords("");
+      setJob("");
+      setComments("");
+      setSubmitted(false);
+      const { msgSent } = setTimeout(() => setFormSubmitted(""), 5000);
+      return () => {
+        clearTimeout(msgSent);
+      };
+    } else {
+      const { msgSent } = setTimeout(() => setFormSubmitted(""), 5000);
+      return () => {
+        clearTimeout(msgSent);
+      };
+    }
+  }, [submitted]);
 
   return (
     <StyledAddRecord>
@@ -64,10 +75,8 @@ const AddRecord = () => {
           target="hidden_iframe"
           onSubmit={(e) => {
             validateForm();
-            if (!submitted) {
+            if (!validateForm()) {
               e.preventDefault();
-            } else {
-              console.log("form submitted");
             }
           }}
         >
@@ -96,7 +105,6 @@ const AddRecord = () => {
           </select>
 
           {/* Records =======================================================================================*/}
-
           <select
             name="entry.462237252"
             onChange={(e) => setRecords(e.target.value)}
@@ -128,7 +136,6 @@ const AddRecord = () => {
           </select>
 
           {/* Comments =======================================================================================*/}
-
           <input
             type="text"
             name="entry.1817980315"

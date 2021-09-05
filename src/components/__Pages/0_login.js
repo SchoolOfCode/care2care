@@ -10,12 +10,16 @@ import NavBar from "../NavBar/index.js";
 import Main from "../Main.js";
 import logo from "../../images/logo.svg";
 import { DisplayFlex } from "../Styled/DisplayFlex.js";
+import InstallPWA from "../PWA_InstallButton/index.js";
 
 export const NotAuthenticated = () => {
   return (
     <StyledLogin>
       <StyledSVG src={logo} alt="" />
-      <LoginButton />
+      <div className="buttons">
+        <LoginButton />
+        <InstallPWA />
+      </div>
     </StyledLogin>
   );
 };
@@ -35,6 +39,19 @@ const StyledLogin = styled.div`
   background: ${(props) => props.theme.bg};
   width: 100vw;
   height: 100vh;
+
+  .buttons {
+    margin-top: 50px;
+
+    button {
+      margin: 0 10px;
+      background: ${(props) => props.theme.accent1};
+
+      @media (max-width: 738px) {
+        width: 40vw;
+      }
+    }
+  }
 `;
 
 const StyledSVG = styled(SVG)`

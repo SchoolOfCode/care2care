@@ -36,56 +36,61 @@ const PatientProfile = () => {
           />
           <h3>{item.Patient}</h3>
           <div className="patient-info" key={index}>
-            <div className="info summary">
+            <div className="summary">
               <p>{item.Summary || ""}</p>
             </div>
 
-            <div className="info">
-              <h4>Diagnosis</h4>
-              <p>{item.Diagnosis || "No Information Available"}</p>
-            </div>
+            <div className="box">
+              <div className="info">
+                <h4>Diagnosis</h4>
+                <p>{item.Diagnosis || "No Information Available"}</p>
+              </div>
 
-            <div className="info">
-              <h4>Allergies</h4>
-              <p>{item.Allergies || "No Information Available"}</p>
-            </div>
-            <div className="info">
-              <h4>Medication</h4>
-              <p>{item.Medication || "No Information Available"}</p>
-            </div>
+              <div className="info">
+                <h4>Allergies</h4>
+                <p>{item.Allergies || "No Information Available"}</p>
+              </div>
+              <div className="info">
+                <h4>Medication</h4>
+                <p>{item.Medication || "No Information Available"}</p>
+              </div>
 
-            <div className="info">
-              <h4>DNR</h4>
-              <p>{item.DNR || "No Information Available"}</p>
+              <div className="info">
+                <h4>DNR</h4>
+                <p>{item.DNR || "No Information Available"}</p>
+              </div>
             </div>
 
             <h3>Personal Information</h3>
-            <div className="info">
-              <h4>Email</h4>
-              <p>{item.Email || "No Information Available"}</p>
-            </div>
 
-            <div className="info">
-              <h4>Date of Birth</h4>
-              <p>{item.DoB || "No Information Available"}</p>
-            </div>
+            <div className="box">
+              <div className="info">
+                <h4>Email</h4>
+                <p>{item.Email || "No Information Available"}</p>
+              </div>
 
-            <div className="info">
-              <h4>NHS Number</h4>
-              <p>{item.NHS_Number || "No Information Available"}</p>
-            </div>
+              <div className="info">
+                <h4>Date of Birth</h4>
+                <p>{item.DoB || "No Information Available"}</p>
+              </div>
 
-            <div className="info">
-              <h4>GP</h4>
-              <p>{item.GP || "No Information Available"}</p>
-            </div>
+              <div className="info">
+                <h4>NHS Number</h4>
+                <p>{item.NHS_Number || "No Information Available"}</p>
+              </div>
 
-            <div className="info">
-              <h4>Next of Kin</h4>
-              <span>
-                <p>{item.NextOfKin || "No Information Available"}</p>
-                <p>{item.NoK_Contact}</p>
-              </span>
+              <div className="info">
+                <h4>GP</h4>
+                <p>{item.GP || "No Information Available"}</p>
+              </div>
+
+              <div className="info">
+                <h4>Next of Kin</h4>
+                <span>
+                  <p>{item.NextOfKin || "No Information Available"}</p>
+                  <p>{item.NoK_Contact}</p>
+                </span>
+              </div>
             </div>
           </div>
           {/* <JSONPretty data={item} /> */}
@@ -110,6 +115,16 @@ export default PatientProfile;
 const StyledPatientProfile = styled.div`
   height: calc(100vh - 140px);
 
+  .box {
+    padding: 1px 10px 15px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    :last-child {
+      margin-bottom: 20px;
+    }
+  }
+
   ul {
     ${DisplayFlex}
     flex-direction: column;
@@ -131,10 +146,10 @@ const StyledPatientProfile = styled.div`
   }
 
   .summary {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     padding: 10px;
     margin-bottom: 25px;
+    border-radius: 7px;
   }
 
   .patient-info {
@@ -145,7 +160,7 @@ const StyledPatientProfile = styled.div`
 
     h3 {
       font-size: 20px;
-      margin: 15px 0 10px;
+      margin: 20px 0 10px;
     }
 
     h4 {
@@ -156,6 +171,9 @@ const StyledPatientProfile = styled.div`
     .info {
       margin-top: 15px;
 
+      p {
+        margin-top: 4px;
+      }
       span {
         ${DisplayFlex};
         justify-content: space-between;
