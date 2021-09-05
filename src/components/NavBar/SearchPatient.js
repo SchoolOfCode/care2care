@@ -71,7 +71,9 @@ const StyledSearch = styled.div`
     text-align: right;
     position: absolute;
     top: 55px;
-    right: 40px;
+    right: 20px;
+    height: 200px;
+    overflow-y: scroll;
     width: auto;
     background: ${(props) => props.theme.menuBg};
     list-style: none;

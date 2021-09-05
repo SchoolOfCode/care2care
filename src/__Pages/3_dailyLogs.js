@@ -4,10 +4,15 @@
 //filter which patient we are fetching that data
 //add a button that takes user to that patient profile
 
-const CheckRecord = () => {
-    return ( 
-        <h1>DAILY LOGS</h1>
-     );
-}
- 
-export default CheckRecord;
+import CheckRecordSheets from "../components/3_DailyLogs";
+
+const DailyLogs = () => {
+  return (
+    <>
+      <h1>DAILY LOGS</h1>
+      <CheckRecordSheets />
+    </>
+  );
+};
+
+export default DailyLogs;

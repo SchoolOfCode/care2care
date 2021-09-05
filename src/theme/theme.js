@@ -17,7 +17,7 @@ const DarkTheme = {
   fontColor2: "#f5f5f5",
   accent1: "#00BD9D",
   accent2: "#8BD7D2",
-  notActive: "#16202b"
+  notActive: "#0d1720"
 };
 
 const themes = {

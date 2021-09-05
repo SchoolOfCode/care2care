@@ -17,7 +17,6 @@ const Main = () => {
 export default Main;
 
 const StyledMain = styled.main`
-  height: 90vh;
   width: 100vw;
 
   h1 {

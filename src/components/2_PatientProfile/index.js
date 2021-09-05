@@ -4,6 +4,7 @@ import styled from "styled-components";
 import usePaparse from "../__Hooks/usePaparse";
 import { UserContext } from "../../App";
 import { DisplayFlex } from "../Styled/DisplayFlex";
+import NoPatientSelected from "../Styled/NoPatientSelected";
 
 const URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQk2shcRCfjZcMqWRoT8BXaIymooGq2pcd_heGDVrzQYnT0RL6hxHAq8M6FF9kZm5mILBmjg1qPQJc6/pub?output=csv";
@@ -30,9 +31,8 @@ const PatientSheets = () => {
           />
           <h3>{item.Patient}</h3>
           <div className="patient-info" key={index}>
-            <div className="info">
-              <h4>Summary</h4>
-              <p>{item.Summary || "No Information Available"}</p>
+            <div className="info summary">
+              <p>{item.Summary || ""}</p>
             </div>
 
             <div className="info">
@@ -94,7 +94,7 @@ const PatientSheets = () => {
 
   return (
     <StyledPatientProfile>
-      <div>{!context.patient ? "No patient selected" : <PatientDetails />}</div>
+      <div>{!context.patient ? <NoPatientSelected /> : <PatientDetails />}</div>
     </StyledPatientProfile>
   );
 };
@@ -122,6 +122,13 @@ const StyledPatientProfile = styled.div`
     font-size: 30px;
   }
 
+  .summary {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    padding: 10px;
+    margin-bottom: 25px;
+  }
+
   .patient-info {
     margin-top: 10px;
     padding: 0 30px;
@@ -130,15 +137,16 @@ const StyledPatientProfile = styled.div`
 
     h3 {
       font-size: 20px;
-      margin-bottom: 10px;
+      margin: 15px 0 10px;
     }
-    
+
     h4 {
       color: ${(props) => props.theme.accent1};
       border-bottom: ${(props) => props.theme.accent1} 1px solid;
     }
+
     .info {
-      margin-bottom: 15px;
+      margin-top: 15px;
 
       span {
         ${DisplayFlex};
@@ -147,7 +155,7 @@ const StyledPatientProfile = styled.div`
     }
 
     @media (max-width: 738px) {
-      width: 90vw;
+      width: 100vw;
     }
   }
 `;

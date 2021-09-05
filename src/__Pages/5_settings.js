@@ -36,6 +36,7 @@ const Settings = (props) => {
 export default Settings;
 
 const StyledSettings = styled.div`
+  height: 75vh;
   .settings-options {
     margin: 0 20px 20px;
   }
@@ -43,23 +44,23 @@ const StyledSettings = styled.div`
   .theme-toggle {
     ${DisplayFlex}
     justify-content: space-between;
-
   }
 
   .button {
     position: absolute;
     left: 50%;
     margin-left: -75px;
-    bottom: 100px;
+    bottom: 5vh;
   }
 
   .team {
     position: absolute;
     right: 0;
     bottom: 0px;
-    margin-right: 10px;
+    text-align: center;
+    width: 100vw;
     font-weight: 600;
     font-size: 12px;
-    color: #e1e1e1;
+    color: ${(props) => props.theme.notActive};
   }
 `;
