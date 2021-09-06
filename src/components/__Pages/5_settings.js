@@ -28,7 +28,7 @@ const Settings = (props) => {
       <div class="button">
         <LogoutButton />
       </div>
-      <p className="team">UNITED NATIONS - 2021</p>
+      <p className="team">UNITED NATIONS @ School Of Code - 2021</p>
     </StyledSettings>
   );
 };

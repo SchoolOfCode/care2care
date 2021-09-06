@@ -35,7 +35,6 @@ const Profile = () => {
 export default Profile;
 
 const StyledProfile = styled.div`
-  height: calc(100vh - 150px);
   display: flex;
   flex-direction: column;
   text-align: center;
