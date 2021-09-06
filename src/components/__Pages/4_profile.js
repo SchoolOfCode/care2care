@@ -2,6 +2,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { StyledBGProfile } from "../Styled/StyledBGProfile";
 import { StyledButton } from "../Styled/StyledButton";
 
 const Profile = () => {
@@ -9,25 +10,25 @@ const Profile = () => {
 
   return (
     isAuthenticated && (
-      <>
+      <StyledProfile>
         <h1>PROFILE</h1>
-        <StyledProfile>
-          {/* <JSONPretty data={user} /> */}
+        {/* <JSONPretty data={user} /> */}
+        <div className="background">
           <img src={user.picture} alt={user.name} />
-          <div>
-            <h2>{user.name}</h2>
-            <p>{user.email}</p>
-          </div>
-          <div className="buttons">
-            <StyledButton>
-              <Link to="/patient">Patients</Link>
-            </StyledButton>
-            <StyledButton>
-              <Link to="/check">Records</Link>
-            </StyledButton>
-          </div>
-        </StyledProfile>
-      </>
+        </div>
+        <div className="info">
+          <h2>{user.name}</h2>
+          <p>{user.email}</p>
+        </div>
+        <div className="buttons">
+          <StyledButton>
+            <Link to="/patient">Patients</Link>
+          </StyledButton>
+          <StyledButton>
+            <Link to="/check">Records</Link>
+          </StyledButton>
+        </div>
+      </StyledProfile>
     )
   );
 };
@@ -39,11 +40,28 @@ const StyledProfile = styled.div`
   flex-direction: column;
   text-align: center;
 
+  h1 {
+   display: none;
+  }
+
+  .background {
+    ${StyledBGProfile}
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    position: relative;
+    top: -99px;
+    height: 260px;
+    z-index: -1;
+  }
+
   img {
     width: 150px;
-    margin: 20px auto 0;
-    border: 5px solid ${(props) => props.theme.accent1};
     border-radius: 50%;
+    position: relative;
+    top: 170px;
+  }
+
+  .info {
+    margin-top: -20px;
   }
 
   .buttons {

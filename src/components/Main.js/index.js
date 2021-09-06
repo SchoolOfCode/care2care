@@ -24,5 +24,6 @@ const StyledMain = styled.main`
     margin: 40px 0 20px;
     height: 50px;
     text-align: center;
+    text-transform: uppercase;
   }
 `;
