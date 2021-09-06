@@ -69,6 +69,9 @@ const StyledSearch = styled.div`
     display: flex;
     flex-direction: column;
     text-align: right;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    -ms-backdrop-filter: blur(2px);
     position: absolute;
     top: 55px;
     right: 20px;

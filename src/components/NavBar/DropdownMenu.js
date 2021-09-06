@@ -59,6 +59,9 @@ export default DropdownMenu;
 const StyledDropdown = styled.div`
   .menu {
     background: ${(props) => props.theme.menuBg};
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    -ms-backdrop-filter: blur(2px);
     border-radius: 8px;
     position: absolute;
     top: 50px;

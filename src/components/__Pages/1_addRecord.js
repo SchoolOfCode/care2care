@@ -19,22 +19,20 @@ const AddRecord = () => {
   const [formSubmitted, setFormSubmitted] = useState("");
   const { user } = useAuth0();
 
+  const validatePatient = () => {
+    return !context.patient ? alert("Please select a patient") : true;
+  };
   const validateComments = () => {
-    if (comments.length === 0) {
-      alert("Comments can't be blank");
-      return false;
-    }
-    return true;
+    return !comments ? alert("Comments can't be blank") : true;
   };
 
   const validateForm = () => {
-    if (!validateComments()) {
-      setFormSubmitted(
-        <p className="form-not-submitted">❌ Form not submitted</p>
-      );
+    if (!validateComments() || !validatePatient()) {
+      setFormSubmitted(<FormStatus>❌ Form not submitted</FormStatus>);
       return false;
     } else {
-      setFormSubmitted(<p className="form-submitted">✔️ Form submitted</p>);
+      setSubmitted(true);
+      setFormSubmitted(<FormStatus>✔️ Form submitted</FormStatus>);
       return true;
     }
   };
@@ -45,12 +43,12 @@ const AddRecord = () => {
       setJob("");
       setComments("");
       setSubmitted(false);
-      const { msgSent } = setTimeout(() => setFormSubmitted(""), 5000);
+      const { msgSent } = setTimeout(() => setFormSubmitted(""), 4000);
       return () => {
         clearTimeout(msgSent);
       };
     } else {
-      const { msgSent } = setTimeout(() => setFormSubmitted(""), 5000);
+      const { msgSent } = setTimeout(() => setFormSubmitted(""), 4000);
       return () => {
         clearTimeout(msgSent);
       };
@@ -166,8 +164,12 @@ const AddRecord = () => {
 export default AddRecord;
 
 const StyledAddRecord = styled.div`
-
   .button {
     text-align: center;
   }
+`;
+
+const FormStatus = styled.p`
+  text-align: center;
+  color: ${(props) => props.theme.fontColor2};
 `;
