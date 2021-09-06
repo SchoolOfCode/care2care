@@ -4,19 +4,21 @@
 //filter which patient we are fetching that data
 //add a button that takes user to that patient profile
 
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import usePaparse from "../__Hooks/usePaparse";
 import { UserContext } from "../../App.jsx";
 import NoPatientSelected from "../Styled/NoPatientSelected";
 import { DisplayFlex } from "../Styled/DisplayFlex";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import FilterRecords from "../AllForms/3_FilterRecords.js";
 
 const URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRylb8I0x2LH26SwEXfv7HXfN_91VfLiOlEWxFDWp7VDxiS76XdGIqOoM8nNE9Yx2-dtVR0CyXjpRSh/pub?output=csv";
 
 const DailyLogs = () => {
   const [data] = usePaparse(URL);
+  const [records, setRecords] = useState("");
   const context = useContext(UserContext);
   const filteredRecord = data.filter((item) =>
     item.Patient.includes(context.patient)
@@ -24,21 +26,23 @@ const DailyLogs = () => {
 
   const mapFiltered =
     Array.isArray(filteredRecord) &&
-    filteredRecord.map((item, index) => {
-      return (
-        <StyledMap>
-          <div className="title-time">
-            <h3>{item.Records}</h3>
-            <p>{item.Timestamp}</p>
-          </div>
-          <p>{item.Comments}</p>
-          <div className="posted-by">
-            <p>Posted by: {item.Email}</p>
-            <p>{item.Job_Title}</p>
-          </div>
-        </StyledMap>
-      );
-    });
+    filteredRecord
+      .filter((item) => item.Records.includes(records))
+      .map((item, index) => {
+        return (
+          <StyledMap>
+            <div className="title-time">
+              <h3>{item.Records}</h3>
+              <p>{item.Timestamp}</p>
+            </div>
+            <p>{item.Comments}</p>
+            <div className="posted-by">
+              <p>Posted by: {item.Email}</p>
+              <p>{item.Job_Title}</p>
+            </div>
+          </StyledMap>
+        );
+      });
 
   const DailyLogs = () => {
     return (
@@ -47,6 +51,7 @@ const DailyLogs = () => {
           <Link to="/patient">See Profile</Link>
           <h3>{context.patient}</h3>
         </div>
+        <FilterRecords records={records} setRecords={setRecords} />
         {mapFiltered}
       </>
     );
@@ -62,7 +67,6 @@ const DailyLogs = () => {
 export default DailyLogs;
 
 const StyledDailyLogs = styled.div`
-  
   a {
     text-decoration: none;
     color: ${(props) => props.theme.fontColor1};
@@ -85,6 +89,7 @@ const StyledMap = styled.div`
   margin: 30px auto 50px;
   padding: 0 15px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: ${(props) => props.theme.navBg};
 
   h3 {
     margin: 10px 0;

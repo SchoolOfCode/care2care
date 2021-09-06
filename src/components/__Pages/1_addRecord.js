@@ -7,7 +7,12 @@ import styled from "styled-components";
 import { UserContext } from "../../App.jsx";
 import { StyledButton } from "../Styled/StyledButton";
 import { StyledForm } from "../Styled/StyledForm";
+import GetRecords from "../AllForms/1_GetRecords.js";
+import GetJob from "../AllForms/1_GetJob.js";
+import GetPatient from "../AllForms/1_GetPatient.js";
+import GetComments from "../AllForms/1_GetComments.js";
 
+// = lazy(() => import(""));
 const AddRecord = () => {
   const context = useContext(UserContext);
   const FORM_ACTION =
@@ -78,69 +83,10 @@ const AddRecord = () => {
             }
           }}
         >
-          {/* Patient =======================================================================================*/}
-          <input
-            type="text"
-            name="entry.786976050"
-            value={context.patient}
-            placeholder="Patient not selected"
-            readOnly
-          />
-
-          {/* Job Title [Staff] =======================================================================================*/}
-          <select
-            name="entry.31137095"
-            onChange={(e) => setJob(e.target.value)}
-            value={job}
-            required
-          >
-            <option value="" disabled defaultValue hidden>
-              Job Title [Staff]
-            </option>
-            <option value="Care Assistant">Care Assistant</option>
-            <option value="Senior Care Assistant">Senior Care Assistant</option>
-            <option value="Manager">Manager</option>
-          </select>
-
-          {/* Records =======================================================================================*/}
-          <select
-            name="entry.462237252"
-            onChange={(e) => setRecords(e.target.value)}
-            value={records}
-            required
-          >
-            <option value="" disabled defaultValue hidden>
-              Records
-            </option>
-            <option value="Wellbeing">Wellbeing</option>
-            <option value="Personal Hygiene">Personal Hygiene</option>
-            <option value="Incident and/or Accident">
-              Incident and/or Accident
-            </option>
-            <option value="Food and/or Fluids">Food and/or Fluids</option>
-            <option value="Output/Elimination">Output/Elimination</option>
-            <option value="Body mapping">Body mapping</option>
-            <option value="Daily Handover">Daily Handover</option>
-            <option value="Medication">Medication</option>
-            <option value="Professional visits">Professional visits</option>
-            <option value="Family visits">Family visits</option>
-            <option value="Statement Care Records">
-              Statement Care Records
-            </option>
-            <option value="Evaluation">Evaluation</option>
-            <option value="Resident Transfer Form">
-              Resident Transfer Form
-            </option>
-          </select>
-
-          {/* Comments =======================================================================================*/}
-          <input
-            type="text"
-            name="entry.1817980315"
-            value={comments}
-            placeholder={"Comments"}
-            onChange={(e) => setComments(e.target.value)}
-          />
+          <GetPatient context={context} />
+          <GetJob job={job} setJob={setJob} />
+          <GetRecords records={records} setRecords={setRecords} />
+          <GetComments comments={comments} setComments={setComments} />
 
           <input
             className="hidden"
