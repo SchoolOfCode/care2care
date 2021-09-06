@@ -9,18 +9,38 @@
       "purpose": "any maskable"
     },
     {
-      "src": "logo192.png",
+      "src": "logo-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "logo512.png",
+      "src": "logo-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }
   ],
+  "shortcuts": [
+    {
+      "name": "Add New Patient",
+
+      "description": "",
+
+      "url": "/new",
+
+      "icons": [
+        {
+          "src": "/src/images/c2c-add.png",
+
+          "type": "image/png",
+
+          "purpose": "any"
+        }
+      ]
+    }
+  ],
+  
   "start_url": "https://care2care.me/",
   "scope": "https://care2care.me/",
   "display": "standalone",

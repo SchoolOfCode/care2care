@@ -166,7 +166,6 @@ const AddRecord = () => {
 export default AddRecord;
 
 const StyledAddRecord = styled.div`
-  height: calc(100vh - 140px);
 
   .button {
     text-align: center;

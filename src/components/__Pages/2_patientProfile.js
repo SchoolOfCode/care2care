@@ -113,8 +113,7 @@ const PatientProfile = () => {
 export default PatientProfile;
 
 const StyledPatientProfile = styled.div`
-  height: calc(100vh - 140px);
-
+ 
   .box {
     padding: 1px 10px 15px;
     border-radius: 10px;

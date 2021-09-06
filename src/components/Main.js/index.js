@@ -18,6 +18,7 @@ export default Main;
 
 const StyledMain = styled.main`
   width: 100vw;
+  min-height: calc(100vh - 140px);
 
   h1 {
     margin: 40px 0 20px;

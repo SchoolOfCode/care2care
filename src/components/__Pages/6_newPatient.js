@@ -11,5 +11,5 @@ const NewPatient = () => {
 export default NewPatient;
 
 const StyledNewPatient = styled.div`
-  height: calc(100vh - 140px);
+  
 `;

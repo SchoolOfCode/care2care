@@ -36,9 +36,8 @@ const Settings = (props) => {
 export default Settings;
 
 const StyledSettings = styled.div`
-  height: calc(100vh - 140px);
 
-  .settings-options {
+.settings-options {
     margin: 0 20px 20px;
   }
 

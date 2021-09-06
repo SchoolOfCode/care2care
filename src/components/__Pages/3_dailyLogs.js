@@ -62,7 +62,6 @@ const DailyLogs = () => {
 export default DailyLogs;
 
 const StyledDailyLogs = styled.div`
-  height: calc(100vh - 140px);
   
   a {
     text-decoration: none;
