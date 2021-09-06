@@ -71,7 +71,6 @@ const StyledNavBarButtons = styled.nav`
   background: ${(props) => props.theme.navBg};
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
-
   .tab-content {
     ${DisplayFlex}
     justify-content: space-around;
