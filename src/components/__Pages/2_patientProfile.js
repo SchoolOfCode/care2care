@@ -6,6 +6,8 @@
 // import JSONPretty from "react-json-pretty";
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
+import Sticky from "react-sticky-el";
+
 import usePaparse from "../__Hooks/usePaparse";
 import { UserContext } from "../../App";
 import { DisplayFlex } from "../Styled/DisplayFlex";
@@ -32,6 +34,7 @@ const PatientProfile = () => {
     }
   };
 
+  console.log(document.documentElement.scrollTop);
   const [data] = usePaparse(URL);
   const context = useContext(UserContext);
 
@@ -44,7 +47,7 @@ const PatientProfile = () => {
     filteredPatient.map((item, index) => {
       return (
         <ul key={index}>
-          <div className="sticky" id={!sticky ? "not-sticky" : "sticky"}>
+          <Sticky className="sticky" id={!sticky ? "not-sticky" : "sticky"}>
             <img
               src={
                 item.Picture ||
@@ -53,7 +56,7 @@ const PatientProfile = () => {
               alt=""
             />
             <h3>{item.Patient}</h3>
-          </div>
+          </Sticky>
 
           <div className="patient-info" key={index}>
             <div className="summary">
@@ -65,55 +68,35 @@ const PatientProfile = () => {
                 title={"Diagnosis"}
                 className={"info"}
                 item={item.Diagnosis}
-                text={"No Information Available"}
               />
               <GetInfo
                 title={"Allergies"}
                 className={"info"}
                 item={item.Allergies}
-                text={"No Information Available"}
               />
               <GetInfo
                 title={"Medication"}
                 className={"info"}
                 item={item.Medication}
-                text={"No Information Available"}
               />
-              <GetInfo
-                title={"DNR"}
-                className={"info"}
-                item={item.DNR}
-                text={"No Information Available"}
-              />
+              <GetInfo title={"DNR"} className={"info"} item={item.DNR} />
             </div>
 
             <h3>Personal Information</h3>
 
             <div className="box">
-              <GetInfo
-                title={"Email"}
-                className={"info"}
-                item={item.Email}
-                text={"No Information Available"}
-              />
+              <GetInfo title={"Email"} className={"info"} item={item.Email} />
               <GetInfo
                 title={"Date of Birth"}
                 className={"info"}
                 item={item.DoB}
-                text={"No Information Available"}
               />
               <GetInfo
                 title={"NHS Number"}
                 className={"info"}
                 item={item.NHS_Number}
-                text={"No Information Available"}
               />
-              <GetInfo
-                title={"GP"}
-                className={"info"}
-                item={item.GP}
-                text={"No Information Available"}
-              />
+              <GetInfo title={"GP"} className={"info"} item={item.GP} />
               <div className="info">
                 <h4>Next of Kin</h4>
                 <span>
@@ -154,42 +137,48 @@ const StyledPatientProfile = styled.div`
   }
 
   .sticky {
-    ${DisplayFlex};
-    position: sticky;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    width: 100vw;
   }
 
   #sticky {
-    flex-direction: row;
-    margin-bottom: 10px;
+    height: 50px;
+    width: 100vw;
+    padding: 5px 0;
+    align-items: center;
+    justify-content: center;
+    background: ${(props) => props.theme.bg};
+    position: absolute;
+    margin-top: 43px;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
     img {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       margin-right: 10px;
       border: 2px solid ${(props) => props.theme.accent1};
     }
-
     h3 {
-      font-size: 20px;
-    }
-  }
-
-  #not-sticky {
-    flex-direction: column;
-    margin-bottom: 10px;
-
-    img {
-      width: 150px;
-      height: 150px;
-      border: 5px solid ${(props) => props.theme.accent1};
-      justify-self: center;
-      object-fit: cover;
+      font-size: 25px;
     }
   }
 
   img {
-    border-radius: 50%;
     object-fit: cover;
+    width: 150px;
+    height: 150px;
+    max-height: 200px;
+    border-radius: 50%;
+    border: 5px solid ${(props) => props.theme.accent1};
+    transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    -moz-transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    -webkit-transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    -o-transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    -ms-transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   }
 
   ul {
