@@ -28,7 +28,9 @@ const Settings = (props) => {
       <div class="button">
         <LogoutButton />
       </div>
-      <p className="team">UNITED NATIONS @ School Of Code - 2021</p>
+      <p className="team">
+        <span>UNITED NATIONS @ School Of Code - 2021</span>
+      </p>
     </StyledSettings>
   );
 };
@@ -36,8 +38,7 @@ const Settings = (props) => {
 export default Settings;
 
 const StyledSettings = styled.div`
-
-.settings-options {
+  .settings-options {
     margin: 0 20px 20px;
   }
 
@@ -57,10 +58,15 @@ const StyledSettings = styled.div`
     position: absolute;
     right: 0;
     bottom: 0px;
-    text-align: center;
     width: 100vw;
     font-weight: 600;
     font-size: 12px;
-    color: ${(props) => props.theme.notActive};
+    text-align: center;
+
+    span {
+      color: ${(props) => props.theme.notActive};
+      background: ${(props) => props.theme.navBg};
+      padding: 0 5px;
+    }
   }
 `;

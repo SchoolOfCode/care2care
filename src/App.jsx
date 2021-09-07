@@ -4,7 +4,7 @@ import { GlobalStyle } from "./theme/globalStyle";
 import themes from "./theme/theme";
 import useLocalStorage from "./components/__Hooks/useLocalStorage";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Authenticated, NotAuthenticated } from "../src/components/__Pages/0_login";
+import { Authenticated, NotAuthenticated } from "./components/__Pages/0_login";
 import Loading from "./components/Styled/Loading";
 
 export const UserContext = createContext();

@@ -7,7 +7,7 @@ import styled from "styled-components";
 import SVG from "react-inlinesvg";
 import LoginButton from "../Styled/LoginButton.js";
 import NavBar from "../NavBar/index.js";
-import Main from "../Main.js";
+import Main from "../Main.js/index.js";
 import logo from "../../images/logo.svg";
 import { DisplayFlex } from "../Styled/DisplayFlex.js";
 import InstallPWA from "../PWA_InstallButton/index.js";

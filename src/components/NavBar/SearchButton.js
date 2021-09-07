@@ -33,6 +33,7 @@ const SearchButton = () => {
     };
   }, [checked]);
 
+  // console.log(checkedRef.current.checked);
   const handleChecked = () => {
     checkedRef.current.checked ? setChecked(true) : setChecked(false);
     if (!checkedRef.current.checked) {
