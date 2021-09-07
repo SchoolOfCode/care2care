@@ -96,6 +96,16 @@ const PatientProfile = () => {
                 className={"info"}
                 item={item.NHS_Number}
               />
+              <GetInfo
+                title={"Father's Name"}
+                className={"info"}
+                item={item.Father}
+              />
+              <GetInfo
+                title={"Mother's Name"}
+                className={"info"}
+                item={item.Mother}
+              />
               <GetInfo title={"GP"} className={"info"} item={item.GP} />
               <div className="info">
                 <h4>Next of Kin</h4>
@@ -104,6 +114,14 @@ const PatientProfile = () => {
                   <p>{item.NoK_Contact}</p>
                 </span>
               </div>
+            </div>
+            <h3>More Info</h3>
+            <div className="box">
+              <GetInfo
+                title={"History"}
+                className={"info"}
+                item={item.History}
+              />
             </div>
           </div>
           {/* <JSONPretty data={item} /> */}
@@ -132,7 +150,7 @@ const StyledPatientProfile = styled.div`
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
     :last-child {
-      margin-bottom: 50px;
+      margin-bottom: 150px;
     }
   }
 
@@ -152,7 +170,7 @@ const StyledPatientProfile = styled.div`
     justify-content: center;
     background: ${(props) => props.theme.bg};
     position: absolute;
-    margin-top: 43px;
+    margin-top: 42.5px;
     top: 0;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
