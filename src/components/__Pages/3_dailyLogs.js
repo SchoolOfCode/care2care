@@ -46,7 +46,7 @@ const DailyLogs = () => {
               <p>Posted by: {item.Email}</p>
             </div>
             <div className="icon-text">
-              <Icons.Job className="icon icon-job" />
+              <Icons.Job className="icon" />
               <p>{item.Job_Title}</p>
             </div>
           </StyledMap>
@@ -78,31 +78,44 @@ export default DailyLogs;
 const StyledDailyLogs = styled.div`
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  padding: 0 10px 20px;
   width: 90vw;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0 auto 50px;
   border-radius: 5px;
 `;
 
 const StyledMap = styled.div`
   width: 100%;
   h3 {
-    border-top: 1px solid black;
+    border-top: 1px solid ${(props) => props.theme.notActive};
+    color: ${(props) => props.theme.fontColour2};
   }
   .title-time {
-    margin-top: 10px;
+    margin-top: 20px;
+    p {
+      text-align: right;
+      color: ${(props) => props.theme.accent2};
+      font-weight: bold;
+    }
   }
   .icon-text {
     display: flex;
     flex-direction: row;
     align-item: flex-start;
-  }
-  .icon {
-    font-size: 14px;
-    margin-top: 5px;
-    margin-right: 5px;
-    
+    font-size: 15px;
+    @media (max-width: 738px) {
+      font-size: 13px;
+    }
 
+    p {
+      width: 90%;
+    }
+    .icon {
+      margin-top: 3px;
+      margin-right: 5px;
+      color: ${(props) => props.theme.accent1};
+    }
   }
 `;

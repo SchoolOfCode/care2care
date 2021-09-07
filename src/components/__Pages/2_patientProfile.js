@@ -146,7 +146,7 @@ const StyledPatientProfile = styled.div`
   .box {
     padding: 1px 10px 15px;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: ${(props) => props.theme.notActive} 0px 1px 4px;
 
     :last-child {
       margin-bottom: 100px;
@@ -204,7 +204,9 @@ const StyledPatientProfile = styled.div`
   }
 
   .summary {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: ${(props) => props.theme.notActive} 0px 3px 6px,
+      rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
     padding: 10px;
     margin-bottom: 25px;
     border-radius: 7px;
