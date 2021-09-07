@@ -41,7 +41,8 @@ const SearchButton = () => {
   };
 
   return (
-    <StyledSearchButton>
+    <StyledSearchButton onSubmit={(e) => e.preventDefault()}>
+      <label>
         <input
           type="checkbox"
           className="radio"
@@ -49,7 +50,14 @@ const SearchButton = () => {
           onChange={handleChecked}
         />
         <span>
-          <Icons.Search className="icon" />
+          {checked || search !== "" ? (
+            <Icons.Delete
+              className="icon delete"
+              onClick={() => context.setPatient("")}
+            />
+          ) : (
+            <Icons.Search className="icon" />
+          )}
           <input
             type="text"
             value={search}
@@ -59,6 +67,7 @@ const SearchButton = () => {
             }}
           />
         </span>
+      </label>
 
       <ul className={`${checked ? "active" : "inactive"}`}>
         {data
@@ -84,7 +93,7 @@ const SearchButton = () => {
 
 export default SearchButton;
 
-const StyledSearchButton = styled.label`
+const StyledSearchButton = styled.form`
   margin-right: 15px;
   span {
     ${DisplayFlex}
@@ -103,6 +112,10 @@ const StyledSearchButton = styled.label`
     color: ${(props) => props.theme.fontColor2};
   }
 
+  .delete {
+    font-size: 22px;
+  }
+
   input[type="text"] {
     position: absolute;
     right: 65px;
@@ -118,6 +131,7 @@ const StyledSearchButton = styled.label`
     color: ${(props) => props.theme.fontColor2};
     text-align: right;
     height: 25px;
+    width: 150px;
     padding: 5px 10px;
   }
 
