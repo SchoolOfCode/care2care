@@ -1,6 +1,16 @@
-import { IoLogIn, IoLogOut, IoSettings } from "react-icons/io5";
+import {
+  IoLogIn,
+  IoLogOut,
+  IoSettings,
+  IoPersonCircleOutline,
+} from "react-icons/io5";
 import { RiUserHeartFill } from "react-icons/ri";
-import { FaUserAlt, FaSearch } from "react-icons/fa";
+import {
+  FaUserAlt,
+  FaSearch,
+  FaCheckCircle,
+  FaStethoscope,
+} from "react-icons/fa";
 import {
   BiMessageAltAdd,
   BiMessageAltCheck,
@@ -20,6 +30,10 @@ const Icons = {
   Profile: FaUserAlt,
   CheckRecords: BiMessageAltCheck,
   Settings: IoSettings,
+  // Daily logs
+  Check: FaCheckCircle,
+  PostedBy: IoPersonCircleOutline,
+  Job: FaStethoscope,
 };
 
 export default Icons;
