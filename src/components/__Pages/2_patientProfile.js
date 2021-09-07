@@ -34,7 +34,6 @@ const PatientProfile = () => {
     }
   };
 
-  console.log(document.documentElement.scrollTop);
   const [data] = usePaparse(URL);
   const context = useContext(UserContext);
 
@@ -192,11 +191,6 @@ const StyledPatientProfile = styled.div`
     max-height: 200px;
     border-radius: 50%;
     border: 5px solid ${(props) => props.theme.accent1};
-    transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-    -moz-transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-    -webkit-transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-    -o-transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-    -ms-transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   }
 
   ul {

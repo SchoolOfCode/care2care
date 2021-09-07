@@ -42,7 +42,6 @@ const SearchButton = () => {
 
   return (
     <StyledSearchButton>
-      <label>
         <input
           type="checkbox"
           className="radio"
@@ -60,7 +59,6 @@ const SearchButton = () => {
             }}
           />
         </span>
-      </label>
 
       <ul className={`${checked ? "active" : "inactive"}`}>
         {data
@@ -86,7 +84,7 @@ const SearchButton = () => {
 
 export default SearchButton;
 
-const StyledSearchButton = styled.form`
+const StyledSearchButton = styled.label`
   margin-right: 15px;
   span {
     ${DisplayFlex}
