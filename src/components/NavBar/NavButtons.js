@@ -12,7 +12,6 @@ const NavBarButtons = () => {
   useEffect(() => {
     return history.listen((location) => {
       setLink(location.pathname);
-      console.log(`You changed the page to: ${link}`);
     });
   }, [history, link]);
 
@@ -27,21 +26,11 @@ const NavBarButtons = () => {
       title: "Patient",
       path: "/patient",
     },
-    // {
-    //   icon: <Icons.Profile />,
-    //   title: "Profile",
-    //   path: "/profile",
-    // },
     {
       icon: <Icons.CheckRecords className="icon" />,
       title: "Daily Logs",
       path: "/logs",
     },
-    // {
-    //   icon: <Icons.Settings />,
-    //   title: "Settings",
-    //   path: "/settings",
-    // },
   ];
 
   return (

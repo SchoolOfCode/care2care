@@ -5,6 +5,7 @@ import themes from "./theme/theme";
 import useLocalStorage from "./components/__Hooks/useLocalStorage";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Authenticated, NotAuthenticated } from "../src/components/__Pages/0_login";
+import Loading from "./components/Styled/Loading";
 
 export const UserContext = createContext();
 
@@ -20,7 +21,7 @@ const App = ({ children }) => {
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
   const { isLoading } = useAuth0();
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loading/>;
 
   return (
     <ThemeProvider theme={themes[theme]}>

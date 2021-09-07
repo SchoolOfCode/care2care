@@ -2,12 +2,13 @@
 
 import { lazy, Suspense } from "react";
 import styled from "styled-components";
+import Loading from "../Styled/Loading";
 const Content = lazy(() => import("../__Router"));
 
 const Main = () => {
   return (
     <StyledMain>
-      <Suspense fallback={<div>Loading</div>}>
+      <Suspense fallback={<Loading />}>
         <Content />
       </Suspense>
     </StyledMain>
