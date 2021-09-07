@@ -76,8 +76,10 @@ const DailyLogs = () => {
 export default DailyLogs;
 
 const StyledDailyLogs = styled.div`
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+  box-shadow: ${(props) => props.theme.notActive} 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
   padding: 0 10px 20px;
   width: 90vw;
   display: flex;
