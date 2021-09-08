@@ -5,9 +5,9 @@ import Loading from "../Styled/Loading";
 const AddRecord = lazy(() => import("../__Pages/1_addRecord"));
 const PatientProfile = lazy(() => import("../__Pages/2_patientProfile"));
 const DailyLogs = lazy(() => import("../__Pages/3_dailyLogs"));
+const NewPatient = lazy(() => import("../__Pages/4_newPatient"));
 const Profile = lazy(() => import("../__Pages/4_profile"));
 const Settings = lazy(() => import("../__Pages/5_settings"));
-const NewPatient = lazy(() => import("../__Pages/6_newPatient"));
 
 const Content = () => {
   return (

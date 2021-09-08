@@ -1,17 +1,7 @@
-import { IoLogIn, IoLogOut, IoSettings } from "react-icons/io5";
+import { IoLogIn, IoLogOut, IoSettings, IoFilterSharp } from "react-icons/io5";
 import { RiUserHeartFill } from "react-icons/ri";
-import {
-  FaUserAlt,
-  FaSearch,
-  FaCheckCircle,
-  FaStethoscope,
-  FaUserMd,
-} from "react-icons/fa";
-import {
-  BiMessageAltAdd,
-  BiMessageAltCheck,
-  BiDotsVertical,
-} from "react-icons/bi";
+import { FaUserAlt, FaSearch, FaCheckCircle, FaStethoscope, FaUserMd } from "react-icons/fa";
+import { BiMessageAltAdd, BiMessageAltCheck, BiDotsVertical } from "react-icons/bi";
 import { TiDelete } from "react-icons/ti";
 
 const Icons = {
@@ -30,6 +20,7 @@ const Icons = {
   Check: FaCheckCircle,
   PostedBy: FaUserMd,
   Job: FaStethoscope,
+  Filter: IoFilterSharp,
 };
 
 export default Icons;

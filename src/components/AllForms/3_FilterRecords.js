@@ -1,12 +1,8 @@
-import { StyledForm } from "../Styled/StyledForm";
-
-const FilterRecords = ({records, setRecords}) => {
+const FilterRecords = ({ records, setRecords }) => {
   return (
-    <StyledForm>
+    <div>
       <select onChange={(e) => setRecords(e.target.value)} value={records}>
-        <option value="" disabled defaultValue hidden>
-          Filter Records
-        </option>
+        <option value="" disabled defaultValue hidden>Filter</option>
         <option value="">Clear Search</option>
         <option value="Wellbeing">Wellbeing</option>
         <option value="Personal Hygiene">Personal Hygiene</option>
@@ -24,8 +20,8 @@ const FilterRecords = ({records, setRecords}) => {
         <option value="Evaluation">Evaluation</option>
         <option value="Resident Transfer Form">Resident Transfer Form</option>
       </select>
-    </StyledForm>
+    </div>
   );
 };
 
-export default FilterRecords
+export default FilterRecords;
