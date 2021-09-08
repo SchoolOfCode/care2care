@@ -1,2 +1,0 @@
-(this.webpackJsonpcare2care=this.webpackJsonpcare2care||[]).push([[9],{68:function(e,c,t){"use strict";t.r(c);var r,a=t(5),n=t(4),i=t(1);c.default=function(){return Object(i.jsx)(s,{children:Object(i.jsx)("h1",{children:"Add New Patient"})})};var s=n.d.div(r||(r=Object(a.a)([""])))}}]);
-//# sourceMappingURL=9.b8030195.chunk.js.map
