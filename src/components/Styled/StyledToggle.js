@@ -30,9 +30,8 @@ const StyledToggle = styled.div`
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    margin-top: -20px;
     width: 40px;
-    height: 23px;
+    height: 20px;
     background: grey;
     border-radius: 100px;
     position: relative;
@@ -44,18 +43,18 @@ const StyledToggle = styled.div`
     position: absolute;
     top: 4px;
     left: 2px;
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     border-radius: 45px;
     transition: 0.2s;
-    background: #333;
+    background: #fff;
     box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
   }
-
+  
   input:checked + label span {
     left: calc(100% - 2px);
     transform: translateX(-100%);
-    background: #fff;
+    background: #333;
   }
 
   label:active span {

@@ -1,10 +1,17 @@
-import { useEffect, useRef, useState } from "react";
-import Icons from "../../theme/icons";
+import { useEffect, useRef, useState, useContext } from "react";
+import { UserContext } from "../../App.jsx";
+import useLocalStorage from "../__Hooks/useLocalStorage";
 import styled from "styled-components";
+import Icons from "../../theme/icons";
+import { DisplayFlex } from "../Styled/DisplayFlex";
 import { Link } from "react-router-dom";
 import ProfileMenu from "./ProfileMenu";
+import Toggle from "../Styled/StyledToggle";
+import LogoutButton from "../Styled/LogoutButton";
 
 const DropdownMenu = () => {
+  const [isOn, setIsOn] = useLocalStorage("isOn", false);
+  const context = useContext(UserContext);
   const dropdownRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const onClick = () => setIsActive(!isActive);
@@ -37,16 +44,27 @@ const DropdownMenu = () => {
         className={`menu ${isActive ? "active" : "inactive"}`}
       >
         <ul>
-          <li onClick={() => setIsActive(false)}>
-            <Link to="/profile">
-              <ProfileMenu />
+          <li className="profile">
+            <ProfileMenu />
+          </li>
+          <li className="list">
+            <p>Change Theme</p>
+            <Toggle
+              isOn={isOn}
+              handleToggle={() => {
+                context.changeTheme();
+                setIsOn(!isOn);
+              }}
+            />
+          </li>
+          <li onClick={() => setIsActive(false)} className="list">
+            <Link to="/new">Add New Patient</Link>
+            <Link to="/new">
+              <Icons.NewPatient className="icon" />
             </Link>
           </li>
-          <li onClick={() => setIsActive(false)}>
-            <Link to="/settings">Settings</Link>
-          </li>
-          <li onClick={() => setIsActive(false)}>
-            <Link to="/new">+ New Patient</Link>
+          <li className="button">
+            <LogoutButton />
           </li>
         </ul>
       </nav>
@@ -59,6 +77,7 @@ export default DropdownMenu;
 const StyledDropdown = styled.div`
   .menu {
     background: ${(props) => props.theme.menuBg};
+    color: ${(props) => props.theme.fontColor1};
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     -ms-backdrop-filter: blur(2px);
@@ -66,12 +85,14 @@ const StyledDropdown = styled.div`
     position: absolute;
     top: 50px;
     right: 20px;
+    min-width: 200px;
     width: auto;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-20px);
     transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    font-size: 12px;
   }
 
   .menu.active {
@@ -96,7 +117,7 @@ const StyledDropdown = styled.div`
     a {
       text-decoration: none;
       color: ${(props) => props.theme.fontColor1};
-      padding: 15px 20px;
+      padding: 15px 0px;
       display: block;
     }
   }
@@ -111,5 +132,29 @@ const StyledDropdown = styled.div`
   }
   @media (min-width: 768px) {
     display: none;
+  }
+
+  .profile {
+    padding: 10px 0;
+  }
+
+  .list {
+    ${DisplayFlex}
+    justify-content: space-between;
+    height: 40px;
+    margin: 0 10px;
+
+    .icon {
+      font-size: 20px;
+    }
+  }
+
+  .button {
+    ${DisplayFlex}
+    height: 50px;
+    button {
+      width: 90%;
+      height: 30px;
+    }
   }
 `;
