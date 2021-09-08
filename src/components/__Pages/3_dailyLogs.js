@@ -7,7 +7,6 @@
 import React, { useContext, useState } from "react";
 import usePaparse from "../__Hooks/usePaparse";
 import { UserContext } from "../../App.jsx";
-import NoPatientSelected from "../Styled/NoPatientSelected";
 import { DisplayFlex } from "../Styled/DisplayFlex";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -60,7 +59,7 @@ const DailyLogs = () => {
       <h1>Daily Logs</h1>
       <div>
         {!context.patient ? (
-          <NoInformation text={"No Patient Selected"} />
+          <NoInformation text={"No patient selected"} />
         ) : (
           <div>
             <div className="patient-selected">
@@ -68,7 +67,7 @@ const DailyLogs = () => {
               <FilterRecords records={records} setRecords={setRecords} />
             </div>
             {mapFiltered.length === 0 ? (
-              <NoInformation text={"No Records Found"} />
+              <NoInformation text={"No records found"} />
             ) : (
               <StyledDailyLogs>{mapFiltered}</StyledDailyLogs>
             )}

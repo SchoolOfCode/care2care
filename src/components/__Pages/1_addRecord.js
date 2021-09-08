@@ -11,6 +11,7 @@ import GetRecords from "../AllForms/1_GetRecords.js";
 import GetJob from "../AllForms/1_GetJob.js";
 import GetPatient from "../AllForms/1_GetPatient.js";
 import GetComments from "../AllForms/1_GetComments.js";
+import NoInformation from "../Styled/NoInformation.js";
 
 // = lazy(() => import(""));
 const AddRecord = () => {
@@ -63,46 +64,49 @@ const AddRecord = () => {
   return (
     <StyledAddRecord>
       <h1>ADD RECORD</h1>
+      {!context.patient ? (
+        <NoInformation text={"No patient selected"} />
+      ) : (
+        <StyledForm>
+          <iframe
+            title="hidden_iframe"
+            name="hidden_iframe"
+            id="hidden_iframe"
+            style={{ display: "none" }}
+          ></iframe>
 
-      <StyledForm>
-        <iframe
-          title="hidden_iframe"
-          name="hidden_iframe"
-          id="hidden_iframe"
-          style={{ display: "none" }}
-        ></iframe>
+          <form
+            action={FORM_ACTION}
+            method="post"
+            target="hidden_iframe"
+            onSubmit={(e) => {
+              validateForm();
+              if (!validateForm()) {
+                e.preventDefault();
+              }
+            }}
+          >
+            <GetPatient context={context} />
+            <GetJob job={job} setJob={setJob} />
+            <GetRecords records={records} setRecords={setRecords} />
+            <GetComments comments={comments} setComments={setComments} />
 
-        <form
-          action={FORM_ACTION}
-          method="post"
-          target="hidden_iframe"
-          onSubmit={(e) => {
-            validateForm();
-            if (!validateForm()) {
-              e.preventDefault();
-            }
-          }}
-        >
-          <GetPatient context={context} />
-          <GetJob job={job} setJob={setJob} />
-          <GetRecords records={records} setRecords={setRecords} />
-          <GetComments comments={comments} setComments={setComments} />
+            <input
+              className="hidden"
+              type="text"
+              name="entry.1626627283"
+              value={user.email}
+              readOnly
+            />
 
-          <input
-            className="hidden"
-            type="text"
-            name="entry.1626627283"
-            value={user.email}
-            readOnly
-          />
+            <div className="button">
+              <StyledButton type="submit">SUBMIT</StyledButton>
+            </div>
 
-          <div className="button">
-            <StyledButton type="submit">SUBMIT</StyledButton>
-          </div>
-
-          <div className="submitted-status">{formSubmitted}</div>
-        </form>
-      </StyledForm>
+            <div className="submitted-status">{formSubmitted}</div>
+          </form>
+        </StyledForm>
+      )}
     </StyledAddRecord>
   );
 };

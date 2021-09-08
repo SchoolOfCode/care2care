@@ -7,12 +7,11 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import Sticky from "react-sticky-el";
-
 import usePaparse from "../__Hooks/usePaparse";
 import { UserContext } from "../../App";
 import { DisplayFlex } from "../Styled/DisplayFlex";
-import NoPatientSelected from "../Styled/NoPatientSelected";
 import GetInfo from "../AllForms/2_GetInfo";
+import NoInformation from "../Styled/NoInformation";
 
 const URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQk2shcRCfjZcMqWRoT8BXaIymooGq2pcd_heGDVrzQYnT0RL6hxHAq8M6FF9kZm5mILBmjg1qPQJc6/pub?output=csv";
@@ -128,14 +127,16 @@ const PatientProfile = () => {
       );
     });
 
-  const PatientDetails = () => {
-    return <>{mapFiltered}</>;
-  };
-
   return (
     <StyledPatientProfile>
       <h1>Patient Profile</h1>
-      <div>{!context.patient ? <NoPatientSelected /> : <PatientDetails />}</div>
+      <div>
+        {!context.patient ? (
+          <NoInformation text={"No patient selected"} />
+        ) : (
+          <div>{mapFiltered}</div>
+        )}
+      </div>
     </StyledPatientProfile>
   );
 };

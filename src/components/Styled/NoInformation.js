@@ -14,6 +14,6 @@ const StyledNoInformation = styled.div`
   text-align: center;
 
   p::before {
-    content: '⚠️'
+    content: "⚠️";
   }
 `;
