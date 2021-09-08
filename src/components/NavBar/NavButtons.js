@@ -24,7 +24,7 @@ const NavBarButtons = () => {
     {
       icon: <Icons.Patients className="icon" />,
       title: "Patient",
-      path: "/patient",
+      path: "/",
     },
     {
       icon: <Icons.CheckRecords className="icon" />,
