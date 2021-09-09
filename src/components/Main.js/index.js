@@ -1,8 +1,9 @@
-// That is the component that changes when the uses switches between pages
+// That is the component that changes when the user 
+// switches between pages
 
 import { lazy, Suspense } from "react";
 import styled from "styled-components";
-import Loading from "../Styled/Loading";
+import Loading from "../StyledComponent/Loading";
 const Content = lazy(() => import("../__Router"));
 
 const Main = () => {
@@ -20,11 +21,4 @@ export default Main;
 const StyledMain = styled.main`
   width: 100vw;
   min-height: calc(100vh - 140px);
-
-  /* h1 {
-    margin: 40px 0 20px;
-    height: 50px;
-    text-align: center;
-    text-transform: uppercase;
-  } */
 `;

@@ -4,7 +4,6 @@ import NavBar from "../NavBar/index.js";
 import Main from "../Main.js/index.js";
 import logo from "../../images/logo.svg";
 import InstallPWA from "../InstallPWA";
-import { DisplayFlex } from "../Styled/DisplayFlex.js";
 import { useAuth0 } from "@auth0/auth0-react";
 import { StyledButton } from "../StyledComponent/StyledButton.js";
 import { ColumnFlexCenter } from "../StyledComponent/StyledDisplay.js";
@@ -39,7 +38,6 @@ export const LogoutButton = () => {
   const { logout } = useAuth0();
   return <StyledLogoutButton onClick={logout}>Log Out</StyledLogoutButton>;
 };
-
 
 // STYLED COMPONENTS ======================================================================================================================================================
 const StyledLogoutButton = styled(StyledButton)`

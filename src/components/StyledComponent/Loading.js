@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { DisplayFlex } from "./DisplayFlex";
+import { RowFlexCenter } from "./StyledDisplay";
 
 const Loading = () => {
   return <StyledLoading>Loading</StyledLoading>;
@@ -13,5 +13,5 @@ const StyledLoading = styled.div`
   width: 100%;
   height: 100%;
   
-  ${DisplayFlex}
+  ${RowFlexCenter}
 `;

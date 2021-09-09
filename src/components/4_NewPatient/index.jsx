@@ -1,15 +1,14 @@
 import styled from "styled-components";
+import Title from "../StyledComponent/StyledTitle";
 
 const NewPatient = () => {
   return (
     <StyledNewPatient>
-      <h1>Add New Patient</h1>
+      <Title text="Add New Patient" />
     </StyledNewPatient>
   );
 };
 
 export default NewPatient;
 
-const StyledNewPatient = styled.div`
-
-`;
+const StyledNewPatient = styled.div``;

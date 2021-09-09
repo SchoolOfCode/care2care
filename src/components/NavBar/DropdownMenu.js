@@ -3,11 +3,11 @@ import { UserContext } from "../../App.jsx";
 import useLocalStorage from "../__Hooks/useLocalStorage";
 import styled from "styled-components";
 import Icons from "../../theme/icons";
-import { DisplayFlex } from "../Styled/DisplayFlex";
 import { Link } from "react-router-dom";
 import ProfileMenu from "./ProfileMenu";
-import Toggle from "../Styled/StyledToggle";
+import Toggle from "../StyledComponent/StyledToggle";
 import { LogoutButton } from "../0_Authenticated/index.jsx";
+import { RowFlexSpace, RowFlexCenter } from "../StyledComponent/StyledDisplay.js";
 
 const DropdownMenu = () => {
   const [isOn, setIsOn] = useLocalStorage("isOn", false);
@@ -140,8 +140,7 @@ const StyledDropdown = styled.div`
   }
 
   .list {
-    ${DisplayFlex}
-    justify-content: space-between;
+    ${RowFlexSpace}
     height: 40px;
     margin: 0 10px;
 
@@ -151,7 +150,7 @@ const StyledDropdown = styled.div`
   }
 
   .button {
-    ${DisplayFlex}
+    ${RowFlexCenter}
     height: 50px;
     button {
       width: 90%;

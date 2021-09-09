@@ -11,5 +11,5 @@ const StyledTitle = styled.h1`
   height: 50px;
   text-align: center;
   text-transform: uppercase;
-  color: black;
+  color: ${props => props.theme.fontColor2};;
 `;

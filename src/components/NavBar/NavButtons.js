@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Icons from "../../theme/icons";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { DisplayFlex } from "../Styled/DisplayFlex";
+import { RowFlexSpace, RowFlexCenter } from "../StyledComponent/StyledDisplay";
 
 const NavBarButtons = () => {
   const history = useHistory();
@@ -61,9 +61,8 @@ const StyledNavBarButtons = styled.nav`
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
   .tab-content {
-    ${DisplayFlex}
+    ${RowFlexSpace}
     justify-content: space-around;
-    flex-flow: row nowrap;
     width: 100%;
     padding: 5px 2px 0;
   }
@@ -81,8 +80,7 @@ const StyledNavBarButtons = styled.nav`
   }
 
   .tab-name {
-    ${DisplayFlex}
-    text-align: center;
+    ${RowFlexCenter}
     width: 33vw;
 
     p {

@@ -5,7 +5,7 @@ import themes from "./theme/theme";
 import useLocalStorage from "./components/__Hooks/useLocalStorage";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Authenticated, NotAuthenticated } from "./components/0_Authenticated";
-import Loading from "./components/Styled/Loading";
+import Loading from "./components/StyledComponent/Loading";
 
 export const UserContext = createContext();
 

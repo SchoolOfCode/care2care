@@ -1,11 +1,11 @@
 import { Switch, Route } from "react-router-dom";
 import React, { lazy, Suspense } from "react";
-import Loading from "../Styled/Loading";
+import Loading from "../StyledComponent/Loading";
 
 const AddRecord = lazy(() => import("../1_NewRecord/index.jsx"));
 const PatientProfile = lazy(() => import("../2_Patient"));
-const DailyLogs = lazy(() => import("../__Pages/3_dailyLogs"));
-const NewPatient = lazy(() => import("../__Pages/4_newPatient"));
+const DailyLogs = lazy(() => import("../3_DailyLogs"));
+const NewPatient = lazy(() => import("../4_NewPatient"));
 
 const Content = () => {
   return (

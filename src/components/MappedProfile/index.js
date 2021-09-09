@@ -3,7 +3,7 @@ import { GetInfo, GetSpacedInfo, GetSummary } from "../GetInput";
 import Box from "../StyledComponent/StyledBox";
 import usePaparse from "../__Hooks/usePaparse";
 
-const MappedData = ({ context, sticky }) => {
+const MappedProfile = ({ context, sticky }) => {
   const URL =
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vQk2shcRCfjZcMqWRoT8BXaIymooGq2pcd_heGDVrzQYnT0RL6hxHAq8M6FF9kZm5mILBmjg1qPQJc6/pub?output=csv";
 
@@ -106,4 +106,4 @@ const MappedData = ({ context, sticky }) => {
   );
 };
 
-export default MappedData;
+export default MappedProfile;

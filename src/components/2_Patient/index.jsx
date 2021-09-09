@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { UserContext } from "../../App";
 import Title from "../StyledComponent/StyledTitle";
-import MappedData from "../Profile";
+import MappedProfile from "../MappedProfile";
 import {
   ColumnFlexCenter,
   RowFlexCenter,
@@ -36,7 +36,7 @@ const PatientProfile = () => {
         {!context.patient ? (
           <NoInformation text={"Please select a patient"} />
         ) : (
-          <MappedData context={context} sticky={sticky} />
+          <MappedProfile context={context} sticky={sticky} />
         )}
       </div>
     </StyledPatientProfile>
