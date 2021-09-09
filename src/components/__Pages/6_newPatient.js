@@ -8,7 +8,7 @@ const NewPatient = () => {
     "https://docs.google.com/forms/u/0/d/e/1FAIpQLSc2chQVmTjiLtPqEqZCCHjnwnCLl0cMkiqLp4wD40bjCMiMnA/formResponse";
 
     const [summary, setSummary] = useState("");
-    const [newPatient, setPatientName] = useState("");
+    const [patientName, setPatientName] = useState("");
     const [email, setEmail] = useState("");
     const [picture, setPicture] = useState("");
     const [dob, setDob] = useState("");
@@ -40,143 +40,143 @@ const NewPatient = () => {
         ></iframe>
 
           <input
-            // className="hidden"
-            // label="Patient Name"
+            className=""
+            type="text"
+            name="entry.1864384875"
+            value={patientName}
+            placeholder={"Name"}
+          />
+
+          <input
+            sclassName=""
             type="text"
             name="entry.2035833587"
             value={summary}
-            placeholder={"Patient Name"}
+            placeholder={"Summary"}
             />
 
-          <input
-            className="hidden"
-            type="text"
-            name="entry.1864384875"
-            value={newPatient.patient}
-            readOnly
-          />
 
           <input
-            className="hidden"
+            className=""
             type="text"
             name="entry.1633351042"
-            value={newPatient.email}
-            readOnly
+            value={email}
+            placeholder={"Email"}
           />
 
           <input
-            className="hidden"
+            className=""
             type="text"
             name="entry.1523701268"
-            value={newPatient.picture}
-            readOnly
+            value={picture}
+            placeholder={"Picture link"}
           />
 
           <input
-            className="hidden"
+            className=""
             type="text"
             name="entry.1717570078"
-            value={newPatient.dob}
-            readOnly
+            value={dob}
+            placeholder={"Date of Birth"}
           />
 
           <input
-            className="hidden"
+            className=""
             type="text"
             name="entry.86638701"
-            value={newPatient.diagnosis}
-            readOnly
+            value={diagnosis}
+            placeholder={"Diagnosis"}
           />
 
           <input
-            className="hidden"
+            className=""
             type="text"
             name="entry.790819135"
-            value={newPatient.allergies}
-            readOnly
+            value={allergies}
+            placeholder={"Allergies"}
           />
 
           <input
-            className="hidden"
+            className=""
             type="text"
             name="entry.1789297383"
-            value={newPatient.address}
-            readOnly
+            value={address}
+            placeholder={"Address"}
           />
           <input
-            className="hidden"
+            className=""
             type="text"
             name="entry.365648476"
-            value={newPatient.nhsNumber}
-            readOnly
+            value={nhsNumber}
+            placeholder={"NHS Number"}
           />
 
           <input
-            className="hidden"
+            className=""
             type="text"
             name="entry.1876095816"
-            value={newPatient.gp}
-            readOnly
+            value={gp}
+            placeholder={"Registered GP"}
           />
 
           <input
-            className="hidden"
+            className=""
             type="text"
             name="entry.1252200599"
-            value={newPatient.nextOfKin}
-            readOnly
+            value={nextOfKin}
+            placeholder={"Next of Kin"}
           />
 
           <input
-            className="hidden"
+            className=""
             type="text"
             name="entry.66985754"
-            value={newPatient.nextOfKinContact}
-            readOnly
+            value={nextOfKinContact}
+            placeholder={"Next of Kin Contacts"}
           />
 
           <input
-            className="hidden"
+            className=""
             type="text"
             name="entry.1981488507"
-            value={newPatient.medication}
-            readOnly
+            value={medication}
+            placeholder={"Medications"}
           />
 
           <input
-            className="hidden"
+            className=""
             type="text"
             name="entry.486109066"
-            value={newPatient.dnr}
-            readOnly
+            value={dnr}
+            placeholder={"DNR (Do Not Resuscitate"}
           />
 
           <input
-            className="hidden"
+            className=""
             type="text"
             name="entry.1942624801"
-            value={newPatient.father}
-            readOnly
+            value={father}
+            placeholder={"Father"}
           />
 
           <input
-            className="hidden"
+            className=""
             type="text"
             name="entry.888867955"
-            value={newPatient.mother}
-            readOnly
+            value={mother}
+            placeholder={"Mother"}
           />
 
           <inputs
-            className="hidden"
+            className=""
             type="text"
             name="entry.314012053"
-            value={newPatient.history}
-            readOnly
+            value={history}
+            placeholder={"History"}
           />
 
           <div className="button">
-            <StyledButton type="submit">SUBMIT</StyledButton>
+            <StyledButton type="submit">Register</StyledButton>
           </div>
 
           <div className="submitted-status">{formSubmitted}</div>
