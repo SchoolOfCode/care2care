@@ -7,7 +7,7 @@ import { DisplayFlex } from "../Styled/DisplayFlex";
 import { Link } from "react-router-dom";
 import ProfileMenu from "./ProfileMenu";
 import Toggle from "../Styled/StyledToggle";
-import LogoutButton from "../Styled/LogoutButton";
+import { LogoutButton } from "../0_Authenticated/index.jsx";
 
 const DropdownMenu = () => {
   const [isOn, setIsOn] = useLocalStorage("isOn", false);
@@ -114,6 +114,7 @@ const StyledDropdown = styled.div`
     :last-child {
       border: none;
     }
+
     a {
       text-decoration: none;
       color: ${(props) => props.theme.fontColor1};

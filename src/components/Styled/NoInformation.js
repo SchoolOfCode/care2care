@@ -1,11 +1,8 @@
 import styled from "styled-components";
+import { DisplayFlex } from "./DisplayFlex";
 
 const NoInformation = ({ text }) => {
-  return (
-    <StyledNoInformation>
-      <p>{text}</p>
-    </StyledNoInformation>
-  );
+  return <StyledNoInformation>{text}</StyledNoInformation>;
 };
 
 export default NoInformation;
@@ -13,7 +10,12 @@ export default NoInformation;
 const StyledNoInformation = styled.div`
   text-align: center;
 
-  p::before {
-    content: "⚠️";
+  div {
+    ${DisplayFlex}
+    margin-top: 10px;
+  }
+
+  .icon {
+    margin-left: 10px;
   }
 `;

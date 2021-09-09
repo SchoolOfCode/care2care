@@ -4,19 +4,16 @@ import { GlobalStyle } from "./theme/globalStyle";
 import themes from "./theme/theme";
 import useLocalStorage from "./components/__Hooks/useLocalStorage";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Authenticated, NotAuthenticated } from "./components/__Pages/0_login";
+import { Authenticated, NotAuthenticated } from "./components/0_Authenticated";
 import Loading from "./components/Styled/Loading";
 
 export const UserContext = createContext();
 
-const CheckAuthenticated = () => {
+const App = () => {
   const { isAuthenticated } = useAuth0();
-  return isAuthenticated ? <Authenticated /> : <NotAuthenticated />;
-};
-
-const App = ({ children }) => {
   const [patient, setPatient] = useState("");
   const [theme, setTheme] = useLocalStorage("theme", "light");
+
   const changeTheme = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
@@ -27,7 +24,7 @@ const App = ({ children }) => {
     <ThemeProvider theme={themes[theme]}>
       <GlobalStyle />
       <UserContext.Provider value={{ patient, setPatient, changeTheme }}>
-        <CheckAuthenticated>{children}</CheckAuthenticated>
+      {isAuthenticated ? <Authenticated /> : <NotAuthenticated />}
       </UserContext.Provider>
     </ThemeProvider>
   );

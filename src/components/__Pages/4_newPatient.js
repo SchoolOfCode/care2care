@@ -10,4 +10,6 @@ const NewPatient = () => {
 
 export default NewPatient;
 
-const StyledNewPatient = styled.div``;
+const StyledNewPatient = styled.div`
+
+`;

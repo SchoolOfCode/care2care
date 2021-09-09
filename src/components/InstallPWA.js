@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StyledButton } from "../Styled/StyledButton";
+import { StyledButton } from "./StyledComponent/StyledButton";
 
 const InstallPWA = () => {
   const [supportsPWA, setSupportsPWA] = useState(false);

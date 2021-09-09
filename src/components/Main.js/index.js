@@ -21,10 +21,10 @@ const StyledMain = styled.main`
   width: 100vw;
   min-height: calc(100vh - 140px);
 
-  h1 {
+  /* h1 {
     margin: 40px 0 20px;
     height: 50px;
     text-align: center;
     text-transform: uppercase;
-  }
+  } */
 `;

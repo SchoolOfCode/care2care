@@ -1,16 +1,13 @@
-//TO-DO ====================================================================================================================
-//learn how to use universal login from auth0
-//change the login page from auth0 to a custom one with universal login
-//lock which users can log in - has to be done in auth0 website
-
 import styled from "styled-components";
 import SVG from "react-inlinesvg";
-import LoginButton from "../Styled/LoginButton.js";
 import NavBar from "../NavBar/index.js";
 import Main from "../Main.js/index.js";
 import logo from "../../images/logo.svg";
+import InstallPWA from "../InstallPWA";
 import { DisplayFlex } from "../Styled/DisplayFlex.js";
-import InstallPWA from "../PWA_InstallButton/index.js";
+import { useAuth0 } from "@auth0/auth0-react";
+import { StyledButton } from "../StyledComponent/StyledButton.js";
+import { ColumnFlexCenter } from "../StyledComponent/StyledDisplay.js";
 
 export const NotAuthenticated = () => {
   return (
@@ -33,9 +30,24 @@ export const Authenticated = () => {
   );
 };
 
+export const LoginButton = () => {
+  const { loginWithRedirect } = useAuth0();
+  return <StyledButton onClick={loginWithRedirect}>Log In</StyledButton>;
+};
+
+export const LogoutButton = () => {
+  const { logout } = useAuth0();
+  return <StyledLogoutButton onClick={logout}>Log Out</StyledLogoutButton>;
+};
+
+
+// STYLED COMPONENTS ======================================================================================================================================================
+const StyledLogoutButton = styled(StyledButton)`
+  background: rgb(255, 85, 85);
+`;
+
 const StyledLogin = styled.div`
-  ${DisplayFlex}
-  flex-direction: column;
+  ${ColumnFlexCenter}
   background: ${(props) => props.theme.bg};
   width: 100vw;
   height: 100vh;

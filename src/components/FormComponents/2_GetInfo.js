@@ -7,4 +7,3 @@ const GetInfo = ({ className, item, title }) => {
   );
 };
 
-export default GetInfo;

@@ -1,16 +1,10 @@
-//TO-DO ====================================================================================================================
-//add dropdown to selct patient (like in 1_patientProfile)
-//fetch data from 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRylb8I0x2LH26SwEXfv7HXfN_91VfLiOlEWxFDWp7VDxiS76XdGIqOoM8nNE9Yx2-dtVR0CyXjpRSh/pub?output=csv'
-//filter which patient we are fetching that data
-//add a button that takes user to that patient profile
-
 import React, { useContext, useState } from "react";
 import usePaparse from "../__Hooks/usePaparse";
 import { UserContext } from "../../App.jsx";
 import { DisplayFlex } from "../Styled/DisplayFlex";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import FilterRecords from "../AllForms/3_FilterRecords.js";
+import FilterRecords from "../FormComponents/3_FilterRecords.js";
 import Icons from "../../theme/icons";
 import NoInformation from "../Styled/NoInformation";
 
@@ -59,7 +53,13 @@ const DailyLogs = () => {
       <h1>Daily Logs</h1>
       <div>
         {!context.patient ? (
-          <NoInformation text={"No patient selected"} />
+          <NoInformation
+          text={
+            <div>
+              <span>Please select a patient</span><Icons.Search className="icon"/>
+            </div>
+          }
+        />
         ) : (
           <div>
             <div className="patient-selected">
