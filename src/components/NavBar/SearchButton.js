@@ -57,9 +57,10 @@ const SearchButton = () => {
               onClick={() => context.setPatient("")}
             />
           ) : (
-            <Icons.Search className="icon" />
+            <Icons.Search className="icon" aria-label="search" />
           )}
           <input
+            placeholder="patient"
             type="text"
             value={search}
             onChange={(e) => {
