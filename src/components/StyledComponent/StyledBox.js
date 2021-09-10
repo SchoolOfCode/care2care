@@ -10,7 +10,7 @@ export default Box;
 const StyledBox = styled.div`
   padding: 1px 10px 15px;
   border-radius: 10px;
-  box-shadow: ${(props) => props.theme.notActive} 0px 1px 4px;
+  box-shadow: ${(props) => props.theme.boxShadow} 0px 1px 4px;
 
   :last-child {
     margin-bottom: 100px;

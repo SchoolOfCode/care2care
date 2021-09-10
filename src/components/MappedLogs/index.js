@@ -118,7 +118,7 @@ const StyledMap = styled.div`
 `;
 
 const StyledDailyLogs = styled.div`
-  box-shadow: ${(props) => props.theme.notActive} 0px 3px 6px,
+  box-shadow: ${(props) => props.theme.boxShadow} 0px 3px 6px,
     rgba(0, 0, 0, 0.23) 0px 3px 6px;
   padding: 0 10px 20px;
   width: 90vw;

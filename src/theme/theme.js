@@ -6,7 +6,8 @@ const LightTheme = {
   fontColor2: "#333333",
   accent1: "#49C6E5",
   accent2: "#51ADE2",
-  notActive: "#aaaaaa"
+  notActive: "#A2A0A0",
+  boxShadow: "#A2A0A0"
 };
 
 const DarkTheme = {
@@ -17,7 +18,8 @@ const DarkTheme = {
   fontColor2: "#f5f5f5",
   accent1: "#00BD9D",
   accent2: "#8BD7D2",
-  notActive: "#0d1720"
+  notActive: "#667889",
+  boxShadow: "#0F2335"
 };
 
 const themes = {

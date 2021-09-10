@@ -5,7 +5,7 @@ export const GetInput = ({
   onChange,
   className,
   readOnly,
-  type
+  type,
 }) => {
   return (
     <input
@@ -61,7 +61,3 @@ export const GetSpacedInfo = ({ className, title, item, item2 }) => {
     </div>
   );
 };
-
-export const GetFilter = () => {
-  return
-}

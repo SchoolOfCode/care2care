@@ -103,4 +103,19 @@ export const StyledForm = styled.div`
   input[type="date"] {
     color: ${(props) => props.theme.menuBg};
   }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    box-shadow: 0 0 0px 1000px ${(props) => props.theme.navBg} inset;
+    -webkit-box-shadow: 0 0 0px 1000px ${(props) => props.theme.navBg} inset;
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: ${(props) => props.theme.fontColor2};
+  }
 `;
