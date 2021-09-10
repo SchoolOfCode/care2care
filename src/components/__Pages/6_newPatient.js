@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { StyledForm } from "../Styled/StyledForm";
-import { StyledButton } from "../Styled/StyledButton";
+import { RegisterButton } from "../Styled/RegisterButton";
 
 const NewPatient = () => {
   const FORM_ACTION =
@@ -25,10 +25,14 @@ const NewPatient = () => {
     const [mother, setMother] = useState("");
     const [history, setHistory] = useState("");
     const [formSubmitted, setFormSubmitted] = useState("");
+    const [submitted, setSubmitted] = useState(false);
 
     useEffect(() => {
-      if (formSubmitted) {
-        setFormSubmitted(false);
+      if (submitted) {
+        // setRecords("");
+        // setJob("");
+        // setComments("");
+        setSubmitted(false);
         const { msgSent } = setTimeout(() => setFormSubmitted(""), 4000);
         return () => {
           clearTimeout(msgSent);
@@ -39,7 +43,22 @@ const NewPatient = () => {
           clearTimeout(msgSent);
         };
       }
-    }, [formSubmitted]);
+    }, [submitted]);
+
+    // useEffect(() => {
+    //   if (formSubmitted) {
+    //     setFormSubmitted(false);
+    //     const { msgSent } = setTimeout(() => setFormSubmitted(""), 4000);
+    //     return () => {
+    //       clearTimeout(msgSent);
+    //     };
+    //   } else {
+    //     const { msgSent } = setTimeout(() => setFormSubmitted(""), 4000);
+    //     return () => {
+    //       clearTimeout(msgSent);
+    //     };
+    //   }
+    // }, [formSubmitted]);
   
 
   return (
@@ -59,8 +78,7 @@ const NewPatient = () => {
           method="post"
           target="hidden_iframe"
           onSubmit={(e) => {
-            
-              e.preventDefault();
+            setSubmitted(true);
             }
           }
         >
@@ -219,7 +237,7 @@ const NewPatient = () => {
           />
 
           <div className="button">
-            <StyledButton type="submit">Register</StyledButton>
+            <RegisterButton type="submit">Register</RegisterButton>
           </div>
 
           <div className="submitted-status">{formSubmitted}</div>
