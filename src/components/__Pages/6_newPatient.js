@@ -59,6 +59,10 @@ const NewPatient = () => {
     //     };
     //   }
     // }, [formSubmitted]);
+
+    function confirmed() {
+      alert("Registration completed");
+    }
   
 
   return (
@@ -237,7 +241,7 @@ const NewPatient = () => {
           />
 
           <div className="button">
-            <RegisterButton type="submit">Register</RegisterButton>
+            <RegisterButton onClick={confirmed} type="submit">Register</RegisterButton>
           </div>
 
           <div className="submitted-status">{formSubmitted}</div>

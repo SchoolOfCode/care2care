@@ -10,5 +10,10 @@ export const RegisterButton = styled.button`
   hover: #FF0000;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: 0px 2px 3px #aaaaaa;
+  text-transform: uppercase;
+  transition: ease background-color 250ms;
+  &:hover {
+    background-color: #49C6E5;
+  }
 `;
