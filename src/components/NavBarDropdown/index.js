@@ -4,7 +4,7 @@ import useLocalStorage from "../__Hooks/useLocalStorage";
 import styled from "styled-components";
 import Icons from "../../theme/icons";
 import { Link } from "react-router-dom";
-import ProfileMenu from "./ProfileMenu";
+import ProfileMenu from "../StyledComponent/StyledProfileMenu";
 import Toggle from "../StyledComponent/StyledToggle";
 import { LogoutButton } from "../0_Authenticated/index.jsx";
 import { RowFlexSpace, RowFlexCenter } from "../StyledComponent/StyledDisplay.js";

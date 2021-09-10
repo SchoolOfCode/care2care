@@ -5,10 +5,11 @@ export const GetInput = ({
   onChange,
   className,
   readOnly,
+  type
 }) => {
   return (
     <input
-      type="text"
+      type={type || "text"}
       name={entry}
       value={value}
       placeholder={label}

@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../App.jsx";
@@ -6,6 +5,7 @@ import { GetInput, GetSelect } from "../GetInput/index.js";
 import Form from "../Form";
 import Title from "../StyledComponent/StyledTitle";
 import NoInformation from "../StyledComponent/StyledNoInformation.js";
+import { FormStatus } from "../StyledComponent/StyledStatus";
 
 const AddRecord = ({ children }) => {
   const [job, setJob] = useState("");
@@ -117,9 +117,3 @@ const AddRecord = ({ children }) => {
 };
 
 export default AddRecord;
-
-const FormStatus = styled.p`
-  margin-top: 20px;
-  text-align: center;
-  color: ${(props) => props.theme.fontColor2};
-`;

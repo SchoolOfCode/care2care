@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import SVG from "react-inlinesvg";
-import NavBar from "../NavBar/index.js";
+import NavBar from "../_NavBar/index.jsx";
 import Main from "../Main.js/index.js";
 import logo from "../../images/logo.svg";
 import InstallPWA from "../InstallPWA";

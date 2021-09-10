@@ -56,7 +56,7 @@ export const StyledForm = styled.div`
 
   input {
     :read-only {
-      color: ${(props) => props.theme.notActive};
+      color: ${(props) => props.theme.menuBg};
       cursor: not-allowed;
 
       :focus {
@@ -66,15 +66,15 @@ export const StyledForm = styled.div`
   }
 
   select {
-    color: #333;
+    color: ${(props) => props.theme.menuBg};
     cursor: pointer;
     :required:invalid {
-      color: gray;
+      color: ${(props) => props.theme.menuBg};
     }
   }
 
   option {
-    color: #333;
+    color: ${(props) => props.theme.menuBg};
   }
 
   input,
@@ -86,9 +86,21 @@ export const StyledForm = styled.div`
     border: none;
     border-bottom: 1px ${(props) => props.theme.notActive} solid;
     border-radius: 5px 5px 0 0;
+    background-color: ${(props) => props.theme.navBg};
+    color: ${(props) => props.theme.fontColor2};
+
     :focus {
       outline: none;
       border-bottom: 2px ${(props) => props.theme.accent1} solid;
+      color: ${(props) => props.theme.fontColor2};
     }
+
+    ::placeholder {
+      color: ${(props) => props.theme.menuBg};
+    }
+  }
+
+  input[type="date"] {
+    color: ${(props) => props.theme.menuBg};
   }
 `;
