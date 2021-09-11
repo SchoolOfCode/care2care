@@ -22,7 +22,6 @@ describe("search button", () => {
     ).should("be.visible");
 
     //act
-
     cy.findByText("Daily Logs").click({ force: true });
 
     describe("nav bar selection", () => {
