@@ -24,7 +24,7 @@
   "shortcuts": [
     {
       "name": "Add New Patient",
-      "description": "",
+      "description": "Add New Patient",
       "url": "/new",
 
       "icons": [
