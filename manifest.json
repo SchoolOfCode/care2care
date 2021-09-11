@@ -25,7 +25,7 @@
     {
       "name": "Add New Patient",
       "description": "Add New Patient",
-      "url": "/new",
+      "url": "/#/new",
 
       "icons": [
         {
