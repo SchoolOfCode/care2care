@@ -38,7 +38,7 @@ const DropdownMenu = () => {
 
   return (
     <StyledDropdown>
-      <Icons.Menu onClick={onClick} className="menu-trigger" />
+      <Icons.Menu onClick={onClick} className="menu-trigger" aria-label="nav" />
       <nav
         ref={dropdownRef}
         className={`menu ${isActive ? "active" : "inactive"}`}
@@ -57,7 +57,11 @@ const DropdownMenu = () => {
               }}
             />
           </li>
-          <li onClick={() => setIsActive(false)} className="list">
+          <li
+            onClick={() => setIsActive(false)}
+            className="list"
+            aria-label=" Add New patient"
+          >
             <Link to="/new">Add New Patient</Link>
             <Link to="/new">
               <Icons.NewPatient className="icon" />

@@ -10,9 +10,9 @@ describe("search button", () => {
     // arrange
     cy.visit("http://localhost:3000/");
     cy.findByText("Log In").click();
-    // cy.findByLabelText("Email address").type("yasmin@email.com");
-    // cy.findByLabelText("Password").type("yasmin123456!");
-    // cy.findByText("Continue").click();
+    cy.findByLabelText("Email address").type("yasmin@email.com");
+    cy.findByLabelText("Password").type("yasmin123456!");
+    cy.findByText("Continue").click();
     cy.findByLabelText("search").click();
     cy.findByPlaceholderText("patient").type("Elvis");
     cy.findByText("Elvis Presley").click();
@@ -25,6 +25,16 @@ describe("search button", () => {
 
     cy.findByText("Daily Logs").click({ force: true });
 
-    //act
+    describe("nav bar selection", () => {
+      it(" should be able to find nav bar", () => {
+        //act
+        cy.findByLabelText("nav").click();
+        // arrange
+        cy.findByText("Add New Patient").click();
+
+        // assert
+        // cy.findByLabeltext("Personal Data").should("be.visisble ")
+      });
+    });
   });
 });
