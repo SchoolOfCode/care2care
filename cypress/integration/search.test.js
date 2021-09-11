@@ -1,5 +1,5 @@
 describe("search button", () => {
-  it("user can search", () => {
+  it("User can find patient profile by search ", () => {
     //act
 
     //login
@@ -24,5 +24,7 @@ describe("search button", () => {
     //act
 
     cy.findByText("Daily Logs").click({ force: true });
+
+    //act
   });
 });
