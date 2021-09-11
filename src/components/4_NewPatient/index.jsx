@@ -79,7 +79,13 @@ const NewPatient = ({ children }) => {
             entry={"entry.1717570078"}
             value={DoB}
             label={"Date of Birth"}
-            type={"date"}
+            type={"text"}
+            onFocus={(e) => {
+              e.currentTarget.type = "date";
+            }}
+            onBlur={(e) => {
+              e.currentTarget.type = "text";
+            }}
             onChange={(e) => setDoB(e.target.value)}
           />
         </div>

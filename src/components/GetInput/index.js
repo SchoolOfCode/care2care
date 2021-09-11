@@ -3,6 +3,8 @@ export const GetInput = ({
   value,
   label,
   onChange,
+  onFocus,
+  onBlur,
   className,
   readOnly,
   type,
@@ -14,6 +16,8 @@ export const GetInput = ({
       value={value}
       placeholder={label}
       onChange={onChange}
+      onFocus={onFocus}
+      onBlur={onBlur}
       className={className}
       readOnly={readOnly}
     />
