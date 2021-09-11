@@ -54,7 +54,7 @@ const AddRecord = ({ children }) => {
       <Title text={"New Record"} />
 
       {!context.patient ? (
-        <NoInformation text={"Please select a patient"} />
+        <NoInformation text={"Please search for a patient"} />
       ) : (
         <Form
           FORM_ACTION="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdm4S7YQmIWc0SPJ-nhxMZkbdWQLwAt3wXJYwXfVTsdaHySvQ/formResponse"

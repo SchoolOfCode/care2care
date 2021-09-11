@@ -30,6 +30,7 @@ export const GetSelect = ({ entry, value, onChange, options, label }) => {
       <option value="" disabled defaultValue hidden>
         {label}
       </option>
+      <option value="">Clear options</option>
       {options.map((option) => (
         <option value={option}>{option}</option>
       ))}

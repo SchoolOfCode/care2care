@@ -34,7 +34,7 @@ const PatientProfile = () => {
       <Title text={"Patient Profile"} />
       <div>
         {!context.patient ? (
-          <NoInformation text={"Please select a patient"} />
+          <NoInformation text={"Please search for a patient"} />
         ) : (
           <MappedProfile context={context} sticky={sticky} />
         )}

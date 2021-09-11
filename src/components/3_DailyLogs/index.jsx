@@ -17,7 +17,7 @@ const DailyLogs = () => {
       <Title text="Daily Logs" />
       <div>
         {!context.patient ? (
-          <NoInformation text={"Please select a patient"} />
+          <NoInformation text={"Please search for a patient"} />
         ) : (
           <div>
             <div className="patient-selected">

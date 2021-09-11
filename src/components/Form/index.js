@@ -100,10 +100,6 @@ export const StyledForm = styled.div`
     }
   }
 
-  /* input[type="date"] {
-    color: ${(props) => props.theme.menuBg};
-  } */
-
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
