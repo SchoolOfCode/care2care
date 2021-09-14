@@ -31,8 +31,8 @@ describe("search button", () => {
         // arrange
         cy.findByText("Add New Patient").click();
 
-        // assert
-        // cy.findByLabeltext("Personal Data").should("be.visisble ")
+        assert;
+        cy.findByLabeltext("Personal Data").should("be.visisble ");
       });
     });
   });
