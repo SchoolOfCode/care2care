@@ -54,13 +54,15 @@ const SearchButton = () => {
           {checked || search !== "" ? (
             <Icons.Delete
               className="icon delete"
+              id="delete"
               onClick={() => context.setPatient("")}
             />
           ) : (
-            <Icons.Search className="icon" />
+            <Icons.Search className="icon" id="search" />
           )}
           <input
             type="text"
+            id="searchInput"
             value={search}
             onChange={(e) => {
               setSearch(e.target.value);

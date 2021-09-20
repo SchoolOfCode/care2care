@@ -38,7 +38,7 @@ const DropdownMenu = () => {
 
   return (
     <StyledDropdown>
-      <Icons.Menu onClick={onClick} className="menu-trigger" />
+      <Icons.Menu onClick={onClick} className="menu-trigger" id="menu"/>
       <nav
         ref={dropdownRef}
         className={`menu ${isActive ? "active" : "inactive"}`}
@@ -63,7 +63,7 @@ const DropdownMenu = () => {
               <Icons.NewPatient className="icon" />
             </Link>
           </li>
-          <li className="button">
+          <li className="button" id="logout">
             <LogoutButton />
           </li>
         </ul>
